@@ -7,7 +7,7 @@
 - Found out that in `test.csv` the following values have wrong values:
   - Lot Frontage
   - GarageYrBlt
-  - MSZoing
+  - MSZoning
   - MasVnrArea
   - Electrical
   - BldgType

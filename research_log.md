@@ -8,3 +8,4 @@
 - Pools have a positive impact on the price even 
 double the price in ex. Northridge
 - Type of dwelling are almost divided in 2 price groups
+- When counting all the sold houses by year in 2010 almost half the amount of houses are sold maybe this data is incomplete

@@ -16,5 +16,8 @@ train.loc[train['Exterior2nd'] == "CmentBd", "Exterior2nd"] = replace_string(tra
 train.loc[train['Exterior2nd'] == "Brk Cmn", "Exterior2nd"] = replace_string(train, "Exterior2nd", "Brk Cmn", "BrkComm")
 train.loc[train['Exterior2nd'] == "Wd Shng", "Exterior2nd"] = replace_string(train, "Exterior2nd", "Wd Shng", "WdShing")
 train.loc[train['MasVnrType'] == "None", 'MasVnrType'] = replace_string(train, "MasVnrType", "None", None)
+train.loc[train['MasVnrArea'] == -1, 'MasVnrArea'] = apply_avg(train, 'MasVnrArea', -1)
+train.loc[train['GarageYrBlt'] == -1, 'GarageYrBlt'] = apply_avg(train, 'GarageYrBlt', -1)
+
 # Verifying
 discover_inconsistencies(train, allowed_values)

@@ -1,8 +1,8 @@
 def apply_avg(df, column, target):
-    print("Applying averages on " + str(target) + " values in " + column + "...")
+    avg = int(df[column].mean())
+    print("Applying " + str(avg) + " (Average) on " + str(target) + " values in " + column + "...")
     target_column = df.loc[df[column] == target, column]
     target_count = target_column.count()
-    avg = int(df[column].mean())
     target_column = avg
     print("=> Done! Replaced " + str(target_count) + " values.")
     return target_column

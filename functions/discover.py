@@ -8,6 +8,7 @@ def discover_inconsistencies(df, allowed_values):
         if (column != 'Id') and column in allowed_values:
             illegal_values = df[~df[column].isin(allowed_values[column])][column]
             illegal_rows = illegal_values.count()
+            print(illegal_values.unique())
             if illegal_rows > 0:
                 print("- There are", illegal_rows, "rows with illegal string values in column", column)
         elif column != 'Id':

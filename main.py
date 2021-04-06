@@ -15,6 +15,6 @@ train.loc[train['BldgType'] == "2fmCon", 'BldgType'] = replace_string(train, "Bl
 train.loc[train['Exterior2nd'] == "CmentBd", "Exterior2nd"] = replace_string(train, "Exterior2nd", "CmentBd", "CemntBd")
 train.loc[train['Exterior2nd'] == "Brk Cmn", "Exterior2nd"] = replace_string(train, "Exterior2nd", "Brk Cmn", "BrkComm")
 train.loc[train['Exterior2nd'] == "Wd Shng", "Exterior2nd"] = replace_string(train, "Exterior2nd", "Wd Shng", "WdShing")
-
+train.loc[train['MasVnrType'] == "None", 'MasVnrType'] = replace_string(train, "MasVnrType", "None", None)
 # Verifying
 discover_inconsistencies(train, allowed_values)

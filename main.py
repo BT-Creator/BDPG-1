@@ -1,17 +1,12 @@
 import pandas as pd
+import numpy as np
+from data.allowed_values import allowed_values
 
 train = pd.read_csv('./data/train.csv')
 
 for column in train:
-    nan = train[column].isnull().values.any()
-    if (nan == True):
-        print(column)
-        print(nan)
-        print("-"*80)
-
-#for column in train:
-#    train.sort_values(column)
-#    print(column)
-#    print('-'*80)
-#    print(train[column].unique())
-
+    if (column != 'Id') and column in allowed_values:
+        illegal_values = train[~train[column].isin(allowed_values[column])][column]
+        illegal_rows = illegal_values.count()
+        if illegal_rows > 0:
+            print("There are", illegal_rows, "rows with illegal values in column", column)

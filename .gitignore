@@ -350,7 +350,7 @@ vignettes/*.pdf
 /*_files/
 
 ### vscode ###
-.vscode/*
+.vscode
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json

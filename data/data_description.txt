@@ -232,7 +232,7 @@ Exterior2nd: Exterior covering on house (if more than one material)
        MetalSd	Metal Siding
        Other	Other
        Plywood	Plywood
-       PreCast	PreCast
+       PreCast	PreCasti
        Stone	Stone
        Stucco	Stucco
        VinylSd	Vinyl Siding

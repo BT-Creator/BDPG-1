@@ -9,3 +9,4 @@ discover_inconsistencies(train, allowed_values)
 
 # Cleaning Phase
 apply_avg(train, 'LotFrontage', -1)
+replace_string(train, "MSZoning", "C (all)", "C")

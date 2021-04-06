@@ -1,4 +1,5 @@
 def discover_inconsistencies(df, allowed_values):
+    print("\n")
     intro_msg = "Discovering irregularities"
     print("#" * (len(intro_msg) + 4))
     print("# " + intro_msg + " #")

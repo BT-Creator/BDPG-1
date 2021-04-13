@@ -29,4 +29,8 @@ train['CentralAir'] = train['CentralAir'].astype('bool')
 train[list(allowed_values.keys())] = train[list(allowed_values.keys())].astype('category')
 train[float_columns] = train[float_columns].astype(float)
 train[date_columns.get('year')] = convert_to_date(train, date_columns.get('year'), '%Y')
-print(train.dtypes)
+train['DateSold'] = pd.to_datetime(train[['YrSold', 'MoSold']]
+                                   .rename(columns={'YrSold': 'year', 'MoSold': 'month'})
+                                   .assign(DAY=1))
+train = train.drop(['YrSold', 'MoSold'], axis=1)
+# TODO: Add the SoldDate to documentation

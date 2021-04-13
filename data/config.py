@@ -74,7 +74,7 @@ float_columns = ['LotArea', 'MasVnrArea', 'BsmtFinSF1', 'BsmtFinSF2', 'BsmtUnfSF
 # date columns is a list that dictates the date columns. This list has 3 keys: year, month, day. These indicates
 # which type of date the columns has.
 date_columns = {
-    'year': ['YearBuilt', 'YearRemodAdd', 'GarageYrBlt', 'YrSold'],
-    'month': ['MoSold'],
-    'day': []
+    'year': ['YearBuilt', 'YearRemodAdd', 'GarageYrBlt'],
+    'month': [],
+    'day': [],
 }

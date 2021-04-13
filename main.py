@@ -1,8 +1,7 @@
 import pandas as pd
-from data.allowed_values import allowed_values
+from data.config import *
 from functions.clean import *
 from functions.discover import *
-from functions.transform import *
 
 # Discover Phase
 train = pd.read_csv('./data/train.csv')
@@ -25,3 +24,5 @@ discover_inconsistencies(train, allowed_values)
 
 # Transform
 train['CentralAir'] = train['CentralAir'].astype('bool')
+train[list(allowed_values.keys())] = train[list(allowed_values.keys())].astype('category')
+print(train.dtypes)

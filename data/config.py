@@ -70,3 +70,11 @@ allowed_values = {
 float_columns = ['LotArea', 'MasVnrArea', 'BsmtFinSF1', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', '1stFlrSF',
                  '2ndFlrSF', 'LowQualFinSF', 'GrLivArea', 'GarageArea', 'WoodDeckSF', 'OpenPorchSF', 'EnclosedPorch',
                  '3SsnPorch', 'ScreenPorch', 'PoolArea']
+
+# date columns is a list that dictates the date columns. This list has 3 keys: year, month, day. These indicates
+# which type of date the columns has.
+date_columns = {
+    'year': ['YearBuilt', 'YearRemodAdd', 'GarageYrBlt', 'YrSold'],
+    'month': ['MoSold'],
+    'day': []
+}

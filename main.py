@@ -24,4 +24,4 @@ train.loc[train['GarageYrBlt'] == -1, 'GarageYrBlt'] = apply_avg(train, 'GarageY
 discover_inconsistencies(train, allowed_values)
 
 # Transform
-train.loc[train['CentralAir']] = convert_to_boolean(train, 'CentralAir', 'Y', 'N')
+train['CentralAir'] = train['CentralAir'].astype('bool')

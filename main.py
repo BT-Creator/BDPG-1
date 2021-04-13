@@ -4,6 +4,8 @@ from functions.clean import *
 from functions.discover import *
 
 # Discover Phase
+from functions.transform import convert_to_date
+
 train = pd.read_csv('./data/train.csv')
 discover_inconsistencies(train, allowed_values)
 
@@ -26,4 +28,5 @@ discover_inconsistencies(train, allowed_values)
 train['CentralAir'] = train['CentralAir'].astype('bool')
 train[list(allowed_values.keys())] = train[list(allowed_values.keys())].astype('category')
 train[float_columns] = train[float_columns].astype(float)
+train[date_columns.get('year')] = convert_to_date(train, date_columns.get('year'), '%Y')
 print(train.dtypes)

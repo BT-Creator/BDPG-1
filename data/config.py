@@ -1,4 +1,4 @@
-# This file contains all parameters that are allowed in the dataset.
+# Allowed_values contains all parameters that are allowed in the dataset.
 # With this, you can quickly check if there is false data in the columns (If the parameters are defined)
 # The variable names matches the column name in test.csv and train.csv
 allowed_values = {
@@ -64,3 +64,9 @@ allowed_values = {
     'SaleCondition': ['Normal', 'Abnorml',
                       'AdjLand', 'Alloca', 'Family', 'Partial']
 }
+
+# float_columns dictates which columns may remain as a float. This was easier, because commonly, only square feet
+# values are allowed to be in float.
+float_columns = ['LotArea', 'MasVnrArea', 'BsmtFinSF1', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', '1stFlrSF',
+                 '2ndFlrSF', 'LowQualFinSF', 'GrLivArea', 'GarageArea', 'WoodDeckSF', 'OpenPorchSF', 'EnclosedPorch',
+                 '3SsnPorch', 'ScreenPorch', 'PoolArea']

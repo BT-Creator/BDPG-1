@@ -1,3 +1,20 @@
+def clean(df):
+    df.loc[df['LotFrontage'] == -1, 'LotFrontage'] = apply_avg(df, 'LotFrontage', -1)
+    df.loc[df['MSZoning'] == "C (all)", 'MSZoning'] = replace_string(df, "MSZoning", "C (all)", "C")
+    df.loc[df['BldgType'] == "Twnhs", 'BldgType'] = replace_string(df, "BldgType", "Twnhs", "TwnhsI")
+    df.loc[df['BldgType'] == "2fmCon", 'BldgType'] = replace_string(df, "BldgType", "2fmCon", "2FmCon")
+    df.loc[df['Exterior2nd'] == "CmentBd", "Exterior2nd"] = replace_string(df, "Exterior2nd", "CmentBd",
+                                                                                 "CemntBd")
+    df.loc[df['Exterior2nd'] == "Brk Cmn", "Exterior2nd"] = replace_string(df, "Exterior2nd", "Brk Cmn",
+                                                                                 "BrkComm")
+    df.loc[df['Exterior2nd'] == "Wd Shng", "Exterior2nd"] = replace_string(df, "Exterior2nd", "Wd Shng",
+                                                                                 "WdShing")
+    df.loc[df['MasVnrType'] == "None", 'MasVnrType'] = replace_string(df, "MasVnrType", "None", None)
+    df.loc[df['MasVnrArea'] == -1, 'MasVnrArea'] = apply_avg(df, 'MasVnrArea', -1)
+    df.loc[df['GarageYrBlt'] == -1, 'GarageYrBlt'] = apply_avg(df, 'GarageYrBlt', -1)
+    return df
+
+
 def apply_avg(df, column, target):
     avg = int(df[column].mean())
     print("Applying " + str(avg) + " (Average) on " + str(target) + " values in " + column + "...")

@@ -1,7 +1,8 @@
 import pandas as pd
 from data.allowed_values import allowed_values
 from functions.clean import *
-from functions.discover import discover_inconsistencies
+from functions.discover import *
+from functions.transform import *
 
 # Discover Phase
 train = pd.read_csv('./data/train.csv')
@@ -21,3 +22,6 @@ train.loc[train['GarageYrBlt'] == -1, 'GarageYrBlt'] = apply_avg(train, 'GarageY
 
 # Verifying
 discover_inconsistencies(train, allowed_values)
+
+# Transform
+train.loc[train['CentralAir']] = convert_to_boolean(train, 'CentralAir', 'Y', 'N')

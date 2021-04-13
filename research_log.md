@@ -18,3 +18,6 @@
 - Made Python function to detect inconsistencies
 - Cleaned LotFrontage by replacing NaN values with Avg of all LotFrontages
 - Cleaned illegal values in MSZoning
+
+# 13-04-21
+## Bo

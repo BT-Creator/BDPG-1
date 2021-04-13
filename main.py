@@ -25,4 +25,5 @@ discover_inconsistencies(train, allowed_values)
 # Transform
 train['CentralAir'] = train['CentralAir'].astype('bool')
 train[list(allowed_values.keys())] = train[list(allowed_values.keys())].astype('category')
+train[float_columns] = train[float_columns].astype(float)
 print(train.dtypes)

@@ -21,3 +21,9 @@
 
 # 13-04-21
 ## Bo
+- Transformed the following properties
+  - `CentralAir`
+  - All columns with a fix set of values
+  - All Square feet to float
+  - All year to Date Datatype
+  - Merged `YrSold` & `MoSold` to `SoldDate`

@@ -9,5 +9,6 @@ train = pd.read_csv('./data/train.csv')
 discover_inconsistencies(train, allowed_values)
 train = clean(train)
 train = transform(train)
+# TODO: Remember adding SoldDate to documentation
 
 # Clean

@@ -4,6 +4,11 @@ from data.config import categorical_values, float_columns, date_columns
 
 
 def transform(df):
+    """Main transform function
+
+    :param df: DataFrame
+    :return: Transformed DataFrame
+    """
     df['CentralAir'] = df['CentralAir'].astype('bool')
     df[list(categorical_values.keys())] = df[list(categorical_values.keys())].astype('category')
     df[float_columns] = df[float_columns].astype(float)
@@ -16,6 +21,13 @@ def transform(df):
 
 
 def convert_to_date(df, targets, date_format):
+    """Transforms multiple columns to Date format
+
+    :param df: DataFrame
+    :param targets: Array of column names
+    :param date_format: Regex Date format
+    :return: Modified columns
+    """
     for target in targets:
         df[target] = pd.to_datetime(df[target], format=date_format)
     return df[targets]

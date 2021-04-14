@@ -46,8 +46,9 @@ def strict_integer_columns(df, column):
 def inconsistent_relation(df, column):
     rows = [column] + chained_columns.get(column)
     data = df[rows].where(df[column].isnull())
+    inconsistencies = 0
     for dependency in chained_columns.get(column):
         if pd.Series(data[dependency]).notnull().any():
             print("- For some NA values in " + column + ", the corresponding properties in " + dependency + " is filled in.")
-            return True
-    return False
+            inconsistencies = inconsistencies + 1
+    return inconsistencies > 0

@@ -83,7 +83,7 @@ date_columns = {
 }
 
 chained_columns = {
-    'BstmtQual': ['BsmtCond', 'BsmtExposure', 'BsmtFinType1', 'BsmtFinSF1', 'BsmtFinType2', 'BsmtFinSF2', 'BsmtUnfSf', 'TotalBsmtSF', 'BsmtFullBath', 'BsmtHalfBath'],
+    'BsmtQual': ['BsmtCond', 'BsmtExposure', 'BsmtFinType1', 'BsmtFinSF1', 'BsmtFinType2', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', 'BsmtFullBath', 'BsmtHalfBath'],
     'GarageType': ['GarageYrBlt', 'GarageFinish', 'GarageArea', 'GarageQual', 'GarageCond'],
     'MasVnrType': ['MasVnrArea']
 }

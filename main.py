@@ -9,7 +9,7 @@ discover_inconsistencies(train)
 train = clean(train)
 discover_inconsistencies(train)
 train = transform(train)
-# TODO: Remember adding SoldDate to documentation
+# TODO: Add SoldDate to documentation
 
 # Clean
 test = pd.read_csv('./data/test.csv')

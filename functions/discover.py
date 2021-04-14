@@ -1,4 +1,7 @@
-def discover_inconsistencies(df, allowed_values):
+from data.config import categorical_values, non_strict_columns
+
+
+def discover_inconsistencies(df):
     print("\n")
     intro_msg = "Discovering irregularities"
     print("#" * (len(intro_msg) + 4))
@@ -6,18 +9,30 @@ def discover_inconsistencies(df, allowed_values):
     print("#" * (len(intro_msg) + 4))
     irregularities = 0
     for column in df:
-        if (column != 'Id') and column in allowed_values:
-            illegal_values = df[~df[column].isin(allowed_values[column])][column]
-            illegal_rows = illegal_values.count()
-            if illegal_rows > 0:
+        if column != 'Id' and column in categorical_values:
+            if illegal_category_values(df, column):
                 irregularities = irregularities + 1
-                print("- There are", illegal_rows, "rows with illegal string values in column", column)
-        elif column != 'Id':
-            df[column] = df[column].fillna(-1).astype(int)
-            illegal_rows = df[df[column] == -1][column].count()
-            if illegal_rows > 0:
+        elif column != 'Id' and column not in non_strict_columns:
+            if strict_integer_columns(df, column):
                 irregularities = irregularities + 1
-                print("- There are", illegal_rows, "rows with NaN values in column", column)
     if irregularities == 0:
         print("Congrats! No data inconsistencies detected.")
     print("\n")
+
+
+def illegal_category_values(df, column):
+    illegal_values = df[~df[column].isin(categorical_values[column])][column]
+    illegal_rows = illegal_values.count()
+    if illegal_rows > 0:
+        print("- There are", illegal_rows, "rows with illegal string values in column", column)
+        return True
+    return False
+
+
+def strict_integer_columns(df, column):
+    df[column] = df[column].fillna(-1).astype(int)
+    illegal_rows = df[df[column] == -1][column].count()
+    if illegal_rows > 0:
+        print("- There are", illegal_rows, "rows with NaN values in column", column)
+        return True
+    return False

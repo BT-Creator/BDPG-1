@@ -4,6 +4,7 @@
 - `float_columns` dictates which columns may remain as a float. This was easier, because commonly, only square feet values are allowed to be in float.
 - `date_columns` is a dictionary that dictates the date columns. This list has 3 keys: year, month, day. These indicates which type of date the columns has.
 - `chained_columns` is a dictionary that defines a main columns that influences other columns. If the main columns has a empty value, this will also apply to other columns.
+- `non_strict_columns` defined where NaN values are allowed in numerical columns. By default, numerical columns should not have NaN values.
 """
 
 categorical_values = {
@@ -82,7 +83,9 @@ date_columns = {
 }
 
 chained_columns = {
-    'BstmtQual': ['BsmtCond', 'BsmtExposure', 'BsmtFinType1', 'BsmtFinSF1', 'BsmtFinType2', 'BsmtFinSF2', 'BsmtUnfSf', 'TotalBsmtSF'],
+    'BstmtQual': ['BsmtCond', 'BsmtExposure', 'BsmtFinType1', 'BsmtFinSF1', 'BsmtFinType2', 'BsmtFinSF2', 'BsmtUnfSf', 'TotalBsmtSF', 'BsmtFullBath', 'BsmtHalfBath'],
     'GarageType': ['GarageYrBlt', 'GarageFinish', 'GarageArea', 'GarageQual', 'GarageCond'],
     'MasVnrType': ['MasVnrArea']
 }
+
+non_strict_columns = ['BsmtFinSF1', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', 'BsmtFullBath', 'BsmtHalfBath', 'GarageCars', 'GarageArea', 'MasVnrArea']

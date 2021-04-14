@@ -1,11 +1,11 @@
 import pandas as pd
 
-from data.config import allowed_values, float_columns, date_columns
+from data.config import categorical_values, float_columns, date_columns
 
 
 def transform(df):
     df['CentralAir'] = df['CentralAir'].astype('bool')
-    df[list(allowed_values.keys())] = df[list(allowed_values.keys())].astype('category')
+    df[list(categorical_values.keys())] = df[list(categorical_values.keys())].astype('category')
     df[float_columns] = df[float_columns].astype(float)
     df[date_columns.get('year')] = convert_to_date(df, date_columns.get('year'), '%Y')
     df['DateSold'] = pd.to_datetime(df[['YrSold', 'MoSold']]

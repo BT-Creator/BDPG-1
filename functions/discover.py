@@ -8,11 +8,6 @@ def discover_inconsistencies(df):
 
     :param df: A dataframe
     """
-    print("\n")
-    intro_msg = "Discovering irregularities"
-    print("#" * (len(intro_msg) + 4))
-    print("# " + intro_msg + " #")
-    print("#" * (len(intro_msg) + 4))
     irregularities = 0
     for column in df:
         if column != 'Id' and column in categorical_values:

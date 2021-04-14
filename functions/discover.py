@@ -1,4 +1,6 @@
-from data.config import categorical_values, non_strict_columns
+import pandas as pd
+
+from data.config import categorical_values, non_strict_columns, chained_columns
 
 
 def discover_inconsistencies(df):
@@ -14,6 +16,9 @@ def discover_inconsistencies(df):
                 irregularities = irregularities + 1
         elif column != 'Id' and column not in non_strict_columns:
             if strict_integer_columns(df, column):
+                irregularities = irregularities + 1
+        if column != 'Id' and column in chained_columns:
+            if inconsistent_relation(df, column):
                 irregularities = irregularities + 1
     if irregularities == 0:
         print("Congrats! No data inconsistencies detected.")
@@ -35,4 +40,14 @@ def strict_integer_columns(df, column):
     if illegal_rows > 0:
         print("- There are", illegal_rows, "rows with NaN values in column", column)
         return True
+    return False
+
+
+def inconsistent_relation(df, column):
+    rows = [column] + chained_columns.get(column)
+    data = df[rows].where(df[column].isnull())
+    for dependency in chained_columns.get(column):
+        if pd.Series(data[dependency]).notnull().any():
+            print("- For some NA values in " + column + ", the corresponding properties in " + dependency + " is filled in.")
+            return True
     return False

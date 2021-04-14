@@ -7,6 +7,7 @@ from functions.transform import transform
 train = pd.read_csv('./data/train.csv')
 discover_inconsistencies(train)
 train = clean(train)
+discover_inconsistencies(train)
 train = transform(train)
 # TODO: Remember adding SoldDate to documentation
 

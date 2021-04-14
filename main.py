@@ -1,23 +1,14 @@
 import pandas as pd
-from data.allowed_values import allowed_values
+from data.config import *
 from functions.clean import *
-from functions.discover import discover_inconsistencies
+from functions.discover import *
+from functions.transform import transform
 
-# Discover Phase
+# Train
 train = pd.read_csv('./data/train.csv')
 discover_inconsistencies(train, allowed_values)
+train = clean(train)
+train = transform(train)
+# TODO: Remember adding SoldDate to documentation
 
-# Cleaning Phase
-train.loc[train['LotFrontage'] == -1, 'LotFrontage'] = apply_avg(train, 'LotFrontage', -1)
-train.loc[train['MSZoning'] == "C (all)", 'MSZoning'] = replace_string(train, "MSZoning", "C (all)", "C")
-train.loc[train['BldgType'] == "Twnhs", 'BldgType'] = replace_string(train, "BldgType", "Twnhs", "TwnhsI")
-train.loc[train['BldgType'] == "2fmCon", 'BldgType'] = replace_string(train, "BldgType", "2fmCon", "2FmCon")
-train.loc[train['Exterior2nd'] == "CmentBd", "Exterior2nd"] = replace_string(train, "Exterior2nd", "CmentBd", "CemntBd")
-train.loc[train['Exterior2nd'] == "Brk Cmn", "Exterior2nd"] = replace_string(train, "Exterior2nd", "Brk Cmn", "BrkComm")
-train.loc[train['Exterior2nd'] == "Wd Shng", "Exterior2nd"] = replace_string(train, "Exterior2nd", "Wd Shng", "WdShing")
-train.loc[train['MasVnrType'] == "None", 'MasVnrType'] = replace_string(train, "MasVnrType", "None", None)
-train.loc[train['MasVnrArea'] == -1, 'MasVnrArea'] = apply_avg(train, 'MasVnrArea', -1)
-train.loc[train['GarageYrBlt'] == -1, 'GarageYrBlt'] = apply_avg(train, 'GarageYrBlt', -1)
-
-# Verifying
-discover_inconsistencies(train, allowed_values)
+# Clean

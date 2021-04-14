@@ -3,7 +3,7 @@
 - `categorical_values` contains all values that are allowed in the dataset. With this, you can quickly check if there is false data in the columns (If the parameters are defined).
 - `float_columns` dictates which columns may remain as a float. This was easier, because commonly, only square feet values are allowed to be in float.
 - `date_columns` is a dictionary that dictates the date columns. This list has 3 keys: year, month, day. These indicates which type of date the columns has.
-- `chained_columns` is a dictionary that defines a main columns that influences other columns. If the main columns has a empty value, this will also apply to other columns.
+- `chained_columns` is a dictionary that defines main columns that influences other columns. If the main columns has a empty value, this will also apply to other columns.
 - `non_strict_columns` defined where NaN values are allowed in numerical columns. By default, numerical columns should not have NaN values.
 """
 
@@ -88,4 +88,4 @@ chained_columns = {
     'MasVnrType': ['MasVnrArea']
 }
 
-non_strict_columns = ['BsmtFinSF1', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', 'BsmtFullBath', 'BsmtHalfBath', 'GarageCars', 'GarageArea', 'MasVnrArea']
+non_strict_columns = ['BsmtFinSF1', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', 'BsmtFullBath', 'BsmtHalfBath', 'GarageCars', 'GarageArea', 'GarageYrBlt', 'MasVnrArea']

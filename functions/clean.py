@@ -1,17 +1,20 @@
+from data.config import chained_columns
+
+
 def clean(df):
     df.loc[df['LotFrontage'] == -1, 'LotFrontage'] = apply_avg(df, 'LotFrontage', -1)
     df.loc[df['MSZoning'] == "C (all)", 'MSZoning'] = replace_string(df, "MSZoning", "C (all)", "C")
     df.loc[df['BldgType'] == "Twnhs", 'BldgType'] = replace_string(df, "BldgType", "Twnhs", "TwnhsI")
     df.loc[df['BldgType'] == "2fmCon", 'BldgType'] = replace_string(df, "BldgType", "2fmCon", "2FmCon")
     df.loc[df['Exterior2nd'] == "CmentBd", "Exterior2nd"] = replace_string(df, "Exterior2nd", "CmentBd",
-                                                                                 "CemntBd")
+                                                                           "CemntBd")
     df.loc[df['Exterior2nd'] == "Brk Cmn", "Exterior2nd"] = replace_string(df, "Exterior2nd", "Brk Cmn",
-                                                                                 "BrkComm")
+                                                                           "BrkComm")
     df.loc[df['Exterior2nd'] == "Wd Shng", "Exterior2nd"] = replace_string(df, "Exterior2nd", "Wd Shng",
-                                                                                 "WdShing")
+                                                                           "WdShing")
     df.loc[df['MasVnrType'] == "None", 'MasVnrType'] = replace_string(df, "MasVnrType", "None", None)
-    df.loc[df['MasVnrArea'] == -1, 'MasVnrArea'] = apply_avg(df, 'MasVnrArea', -1)
-    df.loc[df['GarageYrBlt'] == -1, 'GarageYrBlt'] = apply_avg(df, 'GarageYrBlt', -1)
+    for column in chained_columns:
+        df.loc[df[column].isnull()] = fix_relationships_inconsistency(df, column)
     return df
 
 
@@ -32,3 +35,13 @@ def replace_string(df, column, illegal, replacement):
     target_column = replacement
     print("=> Done! Replaced " + str(target_count) + " values.")
     return target_column
+
+
+def fix_relationships_inconsistency(df, column):
+    print("Fixing relationships between " + column + " and it's children")
+    target_count = 0
+    for dependency in chained_columns.get(column):
+        target_count = target_count + df.loc[df[column].isnull(), dependency].count()
+        df.loc[df[column].isnull(), dependency] = None
+    print("=> Done! Reverted " + str(target_count) + " values to None/NaN.")
+    return df

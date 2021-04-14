@@ -4,6 +4,10 @@ from data.config import categorical_values, non_strict_columns, chained_columns
 
 
 def discover_inconsistencies(df):
+    """Main method that searches for illegal data
+
+    :param df: A dataframe
+    """
     print("\n")
     intro_msg = "Discovering irregularities"
     print("#" * (len(intro_msg) + 4))
@@ -26,6 +30,14 @@ def discover_inconsistencies(df):
 
 
 def illegal_category_values(df, column):
+    """Returns boolean if illegal categorical values were detected
+
+    It uses the `categorical_values` dictionary in `data.config` in order to detect illegal values.
+
+    :param df: Dataframe
+    :param column: Column name of the target column
+    :return: boolean
+    """
     illegal_values = df[~df[column].isin(categorical_values[column])][column]
     illegal_rows = illegal_values.count()
     if illegal_rows > 0:
@@ -35,6 +47,12 @@ def illegal_category_values(df, column):
 
 
 def strict_integer_columns(df, column):
+    """Returns boolean if NaN values were detected
+
+    :param df: Dataframe
+    :param column: Column name of the target column
+    :return: boolean
+    """
     df[column] = df[column].fillna(-1).astype(int)
     illegal_rows = df[df[column] == -1][column].count()
     if illegal_rows > 0:
@@ -44,6 +62,14 @@ def strict_integer_columns(df, column):
 
 
 def inconsistent_relation(df, column):
+    """Returns boolean if NaN values were detected
+
+    Uses `chained_columns` in `data.config` in order to understand relationships.
+
+    :param df: Dataframe
+    :param column: Column name of the target column
+    :return: boolean
+    """
     rows = [column] + chained_columns.get(column)
     data = df[rows].where(df[column].isnull())
     inconsistencies = 0

@@ -27,3 +27,8 @@
   - All Square feet to float
   - All year to Date Datatype
   - Merged `YrSold` & `MoSold` to `SoldDate`
+  
+# 14-04-21
+## Bo
+- Fully cleaned test.csv and train.csv
+- Fixed relationships between certain values *(E.G. When GarageType is `NA`, the build Year was filled in.)*

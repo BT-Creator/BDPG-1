@@ -1,7 +1,13 @@
-# Allowed_values contains all parameters that are allowed in the dataset.
-# With this, you can quickly check if there is false data in the columns (If the parameters are defined)
-# The variable names matches the column name in test.csv and train.csv
-allowed_values = {
+"""Contains several variables that determine the cleaning behavior
+
+- `categorical_values` contains all values that are allowed in the dataset. With this, you can quickly check if there is false data in the columns (If the parameters are defined).
+- `float_columns` dictates which columns may remain as a float. This was easier, because commonly, only square feet values are allowed to be in float.
+- `date_columns` is a dictionary that dictates the date columns. This list has 3 keys: year, month, day. These indicates which type of date the columns has.
+- `chained_columns` is a dictionary that defines main columns that influences other columns. If the main columns has a empty value, this will also apply to other columns.
+- `non_strict_columns` defined where NaN values are allowed in numerical columns. By default, numerical columns should not have NaN values.
+"""
+
+categorical_values = {
     'MSSubClass': [20, 30, 40, 45, 50, 60, 70,
                    75, 80, 85, 90, 120, 150, 160, 180, 190],
     'MSZoning': ['A', 'C', 'FV', 'I', 'RH', 'RL', 'RP', 'RM'],
@@ -65,16 +71,21 @@ allowed_values = {
                       'AdjLand', 'Alloca', 'Family', 'Partial']
 }
 
-# float_columns dictates which columns may remain as a float. This was easier, because commonly, only square feet
-# values are allowed to be in float.
 float_columns = ['LotArea', 'MasVnrArea', 'BsmtFinSF1', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', '1stFlrSF',
                  '2ndFlrSF', 'LowQualFinSF', 'GrLivArea', 'GarageArea', 'WoodDeckSF', 'OpenPorchSF', 'EnclosedPorch',
                  '3SsnPorch', 'ScreenPorch', 'PoolArea']
 
-# date columns is a list that dictates the date columns. This list has 3 keys: year, month, day. These indicates
-# which type of date the columns has.
+
 date_columns = {
     'year': ['YearBuilt', 'YearRemodAdd', 'GarageYrBlt'],
     'month': [],
     'day': [],
 }
+
+chained_columns = {
+    'BsmtQual': ['BsmtCond', 'BsmtExposure', 'BsmtFinType1', 'BsmtFinSF1', 'BsmtFinType2', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', 'BsmtFullBath', 'BsmtHalfBath'],
+    'GarageType': ['GarageYrBlt', 'GarageFinish', 'GarageArea', 'GarageQual', 'GarageCond'],
+    'MasVnrType': ['MasVnrArea']
+}
+
+non_strict_columns = ['BsmtFinSF1', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', 'BsmtFullBath', 'BsmtHalfBath', 'GarageCars', 'GarageArea', 'GarageYrBlt', 'MasVnrArea']

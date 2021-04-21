@@ -32,3 +32,8 @@
 ## Bo
 - Fully cleaned test.csv and train.csv
 - Fixed relationships between certain values *(E.G. When GarageType is `NA`, the build Year was filled in.)*
+
+# 21-04-21
+## Bo
+- Described DataFrame
+- Added ReadMe.MD

@@ -17,7 +17,6 @@ discover_inconsistencies(train)
 train = clean(train)
 discover_inconsistencies(train)
 train = transform(train)
-# TODO: Add SoldDate to documentation
 
 # Clean
 print_stage("Cleaning & transforming test.csv")

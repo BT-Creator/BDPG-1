@@ -41,3 +41,4 @@
 # 27-04-21
 ## Lennert
 - made function for generating the correlation matrix for a given dataframe
+- made a function to get the best correlating elements of a correlation matrix of a dataset

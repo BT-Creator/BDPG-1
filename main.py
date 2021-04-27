@@ -1,7 +1,7 @@
 from functions.clean import *
 from functions.discover import *
 from functions.transform import transform
-from functions.correlationmatrix import generate_correlation_matrix
+from functions.correlationmatrix import *
 
 
 def print_stage(msg):
@@ -30,4 +30,5 @@ test = transform(test)
 # Correlation Matrix
 print_stage("Generating a correlation matrix for train.csv")
 generate_correlation_matrix(train).show()
+get_best_correlations(train)
 

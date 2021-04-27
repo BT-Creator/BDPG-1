@@ -1,6 +1,6 @@
 import pandas as pd
 
-from data.config import categorical_values, non_strict_columns, chained_columns
+from config.clean_params import categorical_values, non_strict_columns, chained_columns
 
 
 def discover_inconsistencies(df):

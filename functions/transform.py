@@ -1,6 +1,6 @@
 import pandas as pd
 
-from data.config import categorical_values, float_columns, date_columns
+from config.clean_params import categorical_values, float_columns, date_columns
 
 
 def transform(df):

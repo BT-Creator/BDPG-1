@@ -1,4 +1,4 @@
-from data.config import chained_columns
+from config.clean_params import chained_columns
 
 
 def clean(df):

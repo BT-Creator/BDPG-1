@@ -1,7 +1,7 @@
 from functions.clean import *
 from functions.discover import *
 from functions.transform import transform
-from functions.regression import split_data
+from functions.regression import split_data, calc_ridge
 
 
 def print_stage(msg):
@@ -29,4 +29,4 @@ test = transform(test)
 
 # Regression
 X_train, X_test, y_train, y_test = split_data(train, test)
-
+calc_ridge(X_train, y_train)

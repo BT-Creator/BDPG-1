@@ -9,5 +9,5 @@ def generate_correlation_matrix(df):
     :return: correlation matrix of DataFrame
     """
     corr_matrix = df.corr()
-    sn.heatmap(corr_matrix, annot=True)
+    sn.heatmap(corr_matrix, annot=True, fmt=".2f", cmap='coolwarm')
     return plt

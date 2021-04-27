@@ -37,3 +37,7 @@
 ## Bo
 - Described DataFrame
 - Added ReadMe.MD
+
+# 27-04-21
+## Lennert
+- made function for generating the correlation matrix for a given dataframe

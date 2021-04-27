@@ -3,7 +3,12 @@
 <!-- build 20204.21.0217.1203                               -->
 <workbook original-version='18.1' source-build='2020.4.2 (20204.21.0217.1203)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
     <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
     <SheetIdentifierTracking />
     <WindowsPersistSimpleIdentifiers />
   </document-format-change-manifest>
@@ -11,15 +16,1665 @@
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
   </preferences>
-  <datasources />
+  <datasources>
+    <datasource caption='train (train)' inline='true' name='federated.0lrc7yb1as09ix112l0bt02qj3lu' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='train' name='excel-direct.195s5e70lxqrwg14bzdvt14d8kgr'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='D:/.school 2021/trim2/Big data/Project ssh/BDPG-1/data/train.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.195s5e70lxqrwg14bzdvt14d8kgr' name='train' table='[train$]' type='table'>
+          <columns gridOrigin='A1:CC1461:no:A1:CC1461:0' header='yes' outcome='2'>
+            <column datatype='integer' name='Id' ordinal='0' />
+            <column datatype='integer' name='MSSubClass' ordinal='1' />
+            <column datatype='string' name='MSZoning' ordinal='2' />
+            <column datatype='string' name='LotFrontage' ordinal='3' />
+            <column datatype='integer' name='LotArea' ordinal='4' />
+            <column datatype='string' name='Street' ordinal='5' />
+            <column datatype='string' name='Alley' ordinal='6' />
+            <column datatype='string' name='LotShape' ordinal='7' />
+            <column datatype='string' name='LandContour' ordinal='8' />
+            <column datatype='string' name='Utilities' ordinal='9' />
+            <column datatype='string' name='LotConfig' ordinal='10' />
+            <column datatype='string' name='LandSlope' ordinal='11' />
+            <column datatype='string' name='Neighborhood' ordinal='12' />
+            <column datatype='string' name='Condition1' ordinal='13' />
+            <column datatype='string' name='Condition2' ordinal='14' />
+            <column datatype='string' name='BldgType' ordinal='15' />
+            <column datatype='string' name='HouseStyle' ordinal='16' />
+            <column datatype='integer' name='OverallQual' ordinal='17' />
+            <column datatype='integer' name='OverallCond' ordinal='18' />
+            <column datatype='integer' name='YearBuilt' ordinal='19' />
+            <column datatype='integer' name='YearRemodAdd' ordinal='20' />
+            <column datatype='string' name='RoofStyle' ordinal='21' />
+            <column datatype='string' name='RoofMatl' ordinal='22' />
+            <column datatype='string' name='Exterior1st' ordinal='23' />
+            <column datatype='string' name='Exterior2nd' ordinal='24' />
+            <column datatype='string' name='MasVnrType' ordinal='25' />
+            <column datatype='integer' name='MasVnrArea' ordinal='26' />
+            <column datatype='string' name='ExterQual' ordinal='27' />
+            <column datatype='string' name='ExterCond' ordinal='28' />
+            <column datatype='string' name='Foundation' ordinal='29' />
+            <column datatype='string' name='BsmtQual' ordinal='30' />
+            <column datatype='string' name='BsmtCond' ordinal='31' />
+            <column datatype='string' name='BsmtExposure' ordinal='32' />
+            <column datatype='string' name='BsmtFinType1' ordinal='33' />
+            <column datatype='integer' name='BsmtFinSF1' ordinal='34' />
+            <column datatype='string' name='BsmtFinType2' ordinal='35' />
+            <column datatype='integer' name='BsmtFinSF2' ordinal='36' />
+            <column datatype='integer' name='BsmtUnfSF' ordinal='37' />
+            <column datatype='integer' name='TotalBsmtSF' ordinal='38' />
+            <column datatype='string' name='Heating' ordinal='39' />
+            <column datatype='string' name='HeatingQC' ordinal='40' />
+            <column datatype='string' name='CentralAir' ordinal='41' />
+            <column datatype='string' name='Electrical' ordinal='42' />
+            <column datatype='integer' name='1stFlrSF' ordinal='43' />
+            <column datatype='integer' name='2ndFlrSF' ordinal='44' />
+            <column datatype='integer' name='LowQualFinSF' ordinal='45' />
+            <column datatype='integer' name='GrLivArea' ordinal='46' />
+            <column datatype='integer' name='BsmtFullBath' ordinal='47' />
+            <column datatype='integer' name='BsmtHalfBath' ordinal='48' />
+            <column datatype='integer' name='FullBath' ordinal='49' />
+            <column datatype='integer' name='HalfBath' ordinal='50' />
+            <column datatype='integer' name='BedroomAbvGr' ordinal='51' />
+            <column datatype='integer' name='KitchenAbvGr' ordinal='52' />
+            <column datatype='string' name='KitchenQual' ordinal='53' />
+            <column datatype='integer' name='TotRmsAbvGrd' ordinal='54' />
+            <column datatype='string' name='Functional' ordinal='55' />
+            <column datatype='integer' name='Fireplaces' ordinal='56' />
+            <column datatype='string' name='FireplaceQu' ordinal='57' />
+            <column datatype='string' name='GarageType' ordinal='58' />
+            <column datatype='string' name='GarageYrBlt' ordinal='59' />
+            <column datatype='string' name='GarageFinish' ordinal='60' />
+            <column datatype='integer' name='GarageCars' ordinal='61' />
+            <column datatype='integer' name='GarageArea' ordinal='62' />
+            <column datatype='string' name='GarageQual' ordinal='63' />
+            <column datatype='string' name='GarageCond' ordinal='64' />
+            <column datatype='string' name='PavedDrive' ordinal='65' />
+            <column datatype='integer' name='WoodDeckSF' ordinal='66' />
+            <column datatype='integer' name='OpenPorchSF' ordinal='67' />
+            <column datatype='integer' name='EnclosedPorch' ordinal='68' />
+            <column datatype='integer' name='3SsnPorch' ordinal='69' />
+            <column datatype='integer' name='ScreenPorch' ordinal='70' />
+            <column datatype='integer' name='PoolArea' ordinal='71' />
+            <column datatype='string' name='PoolQC' ordinal='72' />
+            <column datatype='string' name='Fence' ordinal='73' />
+            <column datatype='string' name='MiscFeature' ordinal='74' />
+            <column datatype='integer' name='MiscVal' ordinal='75' />
+            <column datatype='integer' name='MoSold' ordinal='76' />
+            <column datatype='integer' name='YrSold' ordinal='77' />
+            <column datatype='string' name='SaleType' ordinal='78' />
+            <column datatype='string' name='SaleCondition' ordinal='79' />
+            <column datatype='integer' name='SalePrice' ordinal='80' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='excel-direct.195s5e70lxqrwg14bzdvt14d8kgr' name='train' table='[train$]' type='table'>
+          <columns gridOrigin='A1:CC1461:no:A1:CC1461:0' header='yes' outcome='2'>
+            <column datatype='integer' name='Id' ordinal='0' />
+            <column datatype='integer' name='MSSubClass' ordinal='1' />
+            <column datatype='string' name='MSZoning' ordinal='2' />
+            <column datatype='string' name='LotFrontage' ordinal='3' />
+            <column datatype='integer' name='LotArea' ordinal='4' />
+            <column datatype='string' name='Street' ordinal='5' />
+            <column datatype='string' name='Alley' ordinal='6' />
+            <column datatype='string' name='LotShape' ordinal='7' />
+            <column datatype='string' name='LandContour' ordinal='8' />
+            <column datatype='string' name='Utilities' ordinal='9' />
+            <column datatype='string' name='LotConfig' ordinal='10' />
+            <column datatype='string' name='LandSlope' ordinal='11' />
+            <column datatype='string' name='Neighborhood' ordinal='12' />
+            <column datatype='string' name='Condition1' ordinal='13' />
+            <column datatype='string' name='Condition2' ordinal='14' />
+            <column datatype='string' name='BldgType' ordinal='15' />
+            <column datatype='string' name='HouseStyle' ordinal='16' />
+            <column datatype='integer' name='OverallQual' ordinal='17' />
+            <column datatype='integer' name='OverallCond' ordinal='18' />
+            <column datatype='integer' name='YearBuilt' ordinal='19' />
+            <column datatype='integer' name='YearRemodAdd' ordinal='20' />
+            <column datatype='string' name='RoofStyle' ordinal='21' />
+            <column datatype='string' name='RoofMatl' ordinal='22' />
+            <column datatype='string' name='Exterior1st' ordinal='23' />
+            <column datatype='string' name='Exterior2nd' ordinal='24' />
+            <column datatype='string' name='MasVnrType' ordinal='25' />
+            <column datatype='integer' name='MasVnrArea' ordinal='26' />
+            <column datatype='string' name='ExterQual' ordinal='27' />
+            <column datatype='string' name='ExterCond' ordinal='28' />
+            <column datatype='string' name='Foundation' ordinal='29' />
+            <column datatype='string' name='BsmtQual' ordinal='30' />
+            <column datatype='string' name='BsmtCond' ordinal='31' />
+            <column datatype='string' name='BsmtExposure' ordinal='32' />
+            <column datatype='string' name='BsmtFinType1' ordinal='33' />
+            <column datatype='integer' name='BsmtFinSF1' ordinal='34' />
+            <column datatype='string' name='BsmtFinType2' ordinal='35' />
+            <column datatype='integer' name='BsmtFinSF2' ordinal='36' />
+            <column datatype='integer' name='BsmtUnfSF' ordinal='37' />
+            <column datatype='integer' name='TotalBsmtSF' ordinal='38' />
+            <column datatype='string' name='Heating' ordinal='39' />
+            <column datatype='string' name='HeatingQC' ordinal='40' />
+            <column datatype='string' name='CentralAir' ordinal='41' />
+            <column datatype='string' name='Electrical' ordinal='42' />
+            <column datatype='integer' name='1stFlrSF' ordinal='43' />
+            <column datatype='integer' name='2ndFlrSF' ordinal='44' />
+            <column datatype='integer' name='LowQualFinSF' ordinal='45' />
+            <column datatype='integer' name='GrLivArea' ordinal='46' />
+            <column datatype='integer' name='BsmtFullBath' ordinal='47' />
+            <column datatype='integer' name='BsmtHalfBath' ordinal='48' />
+            <column datatype='integer' name='FullBath' ordinal='49' />
+            <column datatype='integer' name='HalfBath' ordinal='50' />
+            <column datatype='integer' name='BedroomAbvGr' ordinal='51' />
+            <column datatype='integer' name='KitchenAbvGr' ordinal='52' />
+            <column datatype='string' name='KitchenQual' ordinal='53' />
+            <column datatype='integer' name='TotRmsAbvGrd' ordinal='54' />
+            <column datatype='string' name='Functional' ordinal='55' />
+            <column datatype='integer' name='Fireplaces' ordinal='56' />
+            <column datatype='string' name='FireplaceQu' ordinal='57' />
+            <column datatype='string' name='GarageType' ordinal='58' />
+            <column datatype='string' name='GarageYrBlt' ordinal='59' />
+            <column datatype='string' name='GarageFinish' ordinal='60' />
+            <column datatype='integer' name='GarageCars' ordinal='61' />
+            <column datatype='integer' name='GarageArea' ordinal='62' />
+            <column datatype='string' name='GarageQual' ordinal='63' />
+            <column datatype='string' name='GarageCond' ordinal='64' />
+            <column datatype='string' name='PavedDrive' ordinal='65' />
+            <column datatype='integer' name='WoodDeckSF' ordinal='66' />
+            <column datatype='integer' name='OpenPorchSF' ordinal='67' />
+            <column datatype='integer' name='EnclosedPorch' ordinal='68' />
+            <column datatype='integer' name='3SsnPorch' ordinal='69' />
+            <column datatype='integer' name='ScreenPorch' ordinal='70' />
+            <column datatype='integer' name='PoolArea' ordinal='71' />
+            <column datatype='string' name='PoolQC' ordinal='72' />
+            <column datatype='string' name='Fence' ordinal='73' />
+            <column datatype='string' name='MiscFeature' ordinal='74' />
+            <column datatype='integer' name='MiscVal' ordinal='75' />
+            <column datatype='integer' name='MoSold' ordinal='76' />
+            <column datatype='integer' name='YrSold' ordinal='77' />
+            <column datatype='string' name='SaleType' ordinal='78' />
+            <column datatype='string' name='SaleCondition' ordinal='79' />
+            <column datatype='integer' name='SalePrice' ordinal='80' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[train]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:CC1461:no:A1:CC1461:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Id]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>Id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MSSubClass</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MSSubClass]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>MSSubClass</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MSZoning</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MSZoning]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>MSZoning</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LotFrontage</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[LotFrontage]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>LotFrontage</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LotArea</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LotArea]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>LotArea</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Street</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Street]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>Street</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Alley</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Alley]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>Alley</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LotShape</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[LotShape]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>LotShape</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LandContour</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[LandContour]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>LandContour</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Utilities</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Utilities]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>Utilities</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LotConfig</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[LotConfig]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>LotConfig</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LandSlope</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[LandSlope]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>LandSlope</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Neighborhood</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Neighborhood]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>Neighborhood</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Condition1</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Condition1]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>Condition1</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Condition2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Condition2]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>Condition2</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BldgType</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[BldgType]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>BldgType</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HouseStyle</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[HouseStyle]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>HouseStyle</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OverallQual</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OverallQual]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>OverallQual</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OverallCond</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OverallCond]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>OverallCond</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YearBuilt</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[YearBuilt]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>YearBuilt</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YearRemodAdd</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[YearRemodAdd]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>YearRemodAdd</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RoofStyle</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[RoofStyle]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>RoofStyle</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RoofMatl</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[RoofMatl]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>RoofMatl</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Exterior1st</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Exterior1st]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>Exterior1st</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Exterior2nd</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Exterior2nd]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>Exterior2nd</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MasVnrType</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MasVnrType]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>MasVnrType</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MasVnrArea</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MasVnrArea]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>MasVnrArea</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ExterQual</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[ExterQual]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>ExterQual</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ExterCond</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[ExterCond]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>ExterCond</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Foundation</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Foundation]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>Foundation</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtQual</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[BsmtQual]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>BsmtQual</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtCond</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[BsmtCond]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>BsmtCond</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtExposure</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[BsmtExposure]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>BsmtExposure</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtFinType1</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[BsmtFinType1]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>BsmtFinType1</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtFinSF1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BsmtFinSF1]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>BsmtFinSF1</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtFinType2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[BsmtFinType2]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>BsmtFinType2</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtFinSF2</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BsmtFinSF2]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>BsmtFinSF2</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtUnfSF</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BsmtUnfSF]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>BsmtUnfSF</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TotalBsmtSF</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TotalBsmtSF]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>TotalBsmtSF</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Heating</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Heating]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>Heating</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HeatingQC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[HeatingQC]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>HeatingQC</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CentralAir</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[CentralAir]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>CentralAir</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Electrical</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Electrical]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>Electrical</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>1stFlrSF</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[1stFlrSF]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>1stFlrSF</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2ndFlrSF</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[2ndFlrSF]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>2ndFlrSF</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LowQualFinSF</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LowQualFinSF]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>LowQualFinSF</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GrLivArea</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[GrLivArea]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>GrLivArea</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtFullBath</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BsmtFullBath]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>BsmtFullBath</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BsmtHalfBath</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BsmtHalfBath]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>BsmtHalfBath</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FullBath</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[FullBath]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>FullBath</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HalfBath</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[HalfBath]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>HalfBath</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BedroomAbvGr</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BedroomAbvGr]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>BedroomAbvGr</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>KitchenAbvGr</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[KitchenAbvGr]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>KitchenAbvGr</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>KitchenQual</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[KitchenQual]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>KitchenQual</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TotRmsAbvGrd</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TotRmsAbvGrd]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>TotRmsAbvGrd</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Functional</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Functional]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>Functional</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fireplaces</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Fireplaces]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>Fireplaces</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FireplaceQu</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[FireplaceQu]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>FireplaceQu</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GarageType</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[GarageType]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>GarageType</remote-alias>
+            <ordinal>58</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GarageYrBlt</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[GarageYrBlt]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>GarageYrBlt</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GarageFinish</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[GarageFinish]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>GarageFinish</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GarageCars</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[GarageCars]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>GarageCars</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GarageArea</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[GarageArea]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>GarageArea</remote-alias>
+            <ordinal>62</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GarageQual</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[GarageQual]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>GarageQual</remote-alias>
+            <ordinal>63</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GarageCond</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[GarageCond]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>GarageCond</remote-alias>
+            <ordinal>64</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PavedDrive</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PavedDrive]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>PavedDrive</remote-alias>
+            <ordinal>65</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WoodDeckSF</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WoodDeckSF]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>WoodDeckSF</remote-alias>
+            <ordinal>66</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OpenPorchSF</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OpenPorchSF]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>OpenPorchSF</remote-alias>
+            <ordinal>67</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EnclosedPorch</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[EnclosedPorch]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>EnclosedPorch</remote-alias>
+            <ordinal>68</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>3SsnPorch</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[3SsnPorch]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>3SsnPorch</remote-alias>
+            <ordinal>69</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ScreenPorch</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ScreenPorch]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>ScreenPorch</remote-alias>
+            <ordinal>70</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PoolArea</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PoolArea]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>PoolArea</remote-alias>
+            <ordinal>71</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PoolQC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[PoolQC]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>PoolQC</remote-alias>
+            <ordinal>72</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fence</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Fence]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>Fence</remote-alias>
+            <ordinal>73</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MiscFeature</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MiscFeature]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>MiscFeature</remote-alias>
+            <ordinal>74</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MiscVal</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MiscVal]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>MiscVal</remote-alias>
+            <ordinal>75</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MoSold</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MoSold]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>MoSold</remote-alias>
+            <ordinal>76</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YrSold</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[YrSold]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>YrSold</remote-alias>
+            <ordinal>77</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SaleType</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[SaleType]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>SaleType</remote-alias>
+            <ordinal>78</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SaleCondition</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[SaleCondition]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>SaleCondition</remote-alias>
+            <ordinal>79</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SalePrice</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SalePrice]</local-name>
+            <parent-name>[train]</parent-name>
+            <remote-alias>SalePrice</remote-alias>
+            <ordinal>80</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[train_AC513E9488D9460B967A22BF0300CE06]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Bedroom Abv Gr' datatype='integer' name='[BedroomAbvGr]' role='measure' type='quantitative' />
+      <column caption='Bldg Type' datatype='string' name='[BldgType]' role='dimension' type='nominal' />
+      <column caption='Bsmt Cond' datatype='string' name='[BsmtCond]' role='dimension' type='nominal' />
+      <column caption='Bsmt Exposure' datatype='string' name='[BsmtExposure]' role='dimension' type='nominal' />
+      <column caption='Bsmt Full Bath' datatype='integer' name='[BsmtFullBath]' role='measure' type='quantitative' />
+      <column caption='Bsmt Half Bath' datatype='integer' name='[BsmtHalfBath]' role='measure' type='quantitative' />
+      <column caption='Bsmt Qual' datatype='string' name='[BsmtQual]' role='dimension' type='nominal' />
+      <column caption='Bsmt Unf SF' datatype='integer' name='[BsmtUnfSF]' role='measure' type='quantitative' />
+      <column caption='Central Air' datatype='string' name='[CentralAir]' role='dimension' type='nominal' />
+      <column caption='Enclosed Porch' datatype='integer' name='[EnclosedPorch]' role='measure' type='quantitative' />
+      <column caption='Exter Cond' datatype='string' name='[ExterCond]' role='dimension' type='nominal' />
+      <column caption='Exter Qual' datatype='string' name='[ExterQual]' role='dimension' type='nominal' />
+      <column caption='Fireplace Qu' datatype='string' name='[FireplaceQu]' role='dimension' type='nominal' />
+      <column caption='Full Bath' datatype='integer' name='[FullBath]' role='measure' type='quantitative' />
+      <column caption='Garage Area' datatype='integer' name='[GarageArea]' role='measure' type='quantitative' />
+      <column caption='Garage Cars' datatype='integer' name='[GarageCars]' role='measure' type='quantitative' />
+      <column caption='Garage Cond' datatype='string' name='[GarageCond]' role='dimension' type='nominal' />
+      <column caption='Garage Finish' datatype='string' name='[GarageFinish]' role='dimension' type='nominal' />
+      <column caption='Garage Qual' datatype='string' name='[GarageQual]' role='dimension' type='nominal' />
+      <column caption='Garage Type' datatype='string' name='[GarageType]' role='dimension' type='nominal' />
+      <column caption='Garage Yr Blt' datatype='string' name='[GarageYrBlt]' role='dimension' type='nominal' />
+      <column caption='Gr Liv Area' datatype='integer' name='[GrLivArea]' role='measure' type='quantitative' />
+      <column caption='Half Bath' datatype='integer' name='[HalfBath]' role='measure' type='quantitative' />
+      <column caption='Heating QC' datatype='string' name='[HeatingQC]' role='dimension' type='nominal' />
+      <column caption='House Style' datatype='string' name='[HouseStyle]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Id]' role='dimension' type='ordinal' />
+      <column caption='Kitchen Abv Gr' datatype='integer' name='[KitchenAbvGr]' role='measure' type='quantitative' />
+      <column caption='Kitchen Qual' datatype='string' name='[KitchenQual]' role='dimension' type='nominal' />
+      <column caption='Land Contour' datatype='string' name='[LandContour]' role='dimension' type='nominal' />
+      <column caption='Land Slope' datatype='string' name='[LandSlope]' role='dimension' type='nominal' />
+      <column caption='Lot Area' datatype='integer' name='[LotArea]' role='measure' type='quantitative' />
+      <column caption='Lot Config' datatype='string' name='[LotConfig]' role='dimension' type='nominal' />
+      <column caption='Lot Frontage' datatype='string' name='[LotFrontage]' role='dimension' type='nominal' />
+      <column caption='Lot Shape' datatype='string' name='[LotShape]' role='dimension' type='nominal' />
+      <column caption='Low Qual Fin SF' datatype='integer' name='[LowQualFinSF]' role='measure' type='quantitative' />
+      <column caption='MS Sub Class' datatype='integer' name='[MSSubClass]' role='measure' type='quantitative' />
+      <column caption='MS Zoning' datatype='string' name='[MSZoning]' role='dimension' type='nominal' />
+      <column caption='Mas Vnr Area' datatype='integer' name='[MasVnrArea]' role='measure' type='quantitative' />
+      <column caption='Mas Vnr Type' datatype='string' name='[MasVnrType]' role='dimension' type='nominal' />
+      <column caption='Misc Feature' datatype='string' name='[MiscFeature]' role='dimension' type='nominal' />
+      <column caption='Misc Val' datatype='integer' name='[MiscVal]' role='measure' type='quantitative' />
+      <column caption='Mo Sold' datatype='integer' name='[MoSold]' role='measure' type='quantitative' />
+      <column caption='Open Porch SF' datatype='integer' name='[OpenPorchSF]' role='measure' type='quantitative' />
+      <column caption='Overall Cond' datatype='integer' name='[OverallCond]' role='measure' type='quantitative' />
+      <column caption='Overall Qual' datatype='integer' name='[OverallQual]' role='measure' type='quantitative' />
+      <column caption='Paved Drive' datatype='string' name='[PavedDrive]' role='dimension' type='nominal' />
+      <column caption='Pool Area' datatype='integer' name='[PoolArea]' role='measure' type='quantitative' />
+      <column caption='Pool QC' datatype='string' name='[PoolQC]' role='dimension' type='nominal' />
+      <column caption='Roof Matl' datatype='string' name='[RoofMatl]' role='dimension' type='nominal' />
+      <column caption='Roof Style' datatype='string' name='[RoofStyle]' role='dimension' type='nominal' />
+      <column caption='Sale Condition' datatype='string' name='[SaleCondition]' role='dimension' type='nominal' />
+      <column caption='Sale Price' datatype='integer' name='[SalePrice]' role='measure' type='quantitative' />
+      <column caption='Sale Type' datatype='string' name='[SaleType]' role='dimension' type='nominal' />
+      <column caption='Screen Porch' datatype='integer' name='[ScreenPorch]' role='measure' type='quantitative' />
+      <column caption='Tot Rms Abv Grd' datatype='integer' name='[TotRmsAbvGrd]' role='measure' type='quantitative' />
+      <column caption='Total Bsmt SF' datatype='integer' name='[TotalBsmtSF]' role='measure' type='quantitative' />
+      <column caption='Wood Deck SF' datatype='integer' name='[WoodDeckSF]' role='measure' type='quantitative' />
+      <column caption='Year Built' datatype='integer' name='[YearBuilt]' role='dimension' type='quantitative' />
+      <column caption='Year Remod Add' datatype='integer' name='[YearRemodAdd]' role='dimension' type='quantitative' />
+      <column caption='Yr Sold' datatype='integer' name='[YrSold]' role='dimension' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='train' datatype='table' name='[__tableau_internal_object_id__].[train_AC513E9488D9460B967A22BF0300CE06]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Belgium&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='train' id='train_AC513E9488D9460B967A22BF0300CE06'>
+            <properties context=''>
+              <relation connection='excel-direct.195s5e70lxqrwg14bzdvt14d8kgr' name='train' table='[train$]' type='table'>
+                <columns gridOrigin='A1:CC1461:no:A1:CC1461:0' header='yes' outcome='2'>
+                  <column datatype='integer' name='Id' ordinal='0' />
+                  <column datatype='integer' name='MSSubClass' ordinal='1' />
+                  <column datatype='string' name='MSZoning' ordinal='2' />
+                  <column datatype='string' name='LotFrontage' ordinal='3' />
+                  <column datatype='integer' name='LotArea' ordinal='4' />
+                  <column datatype='string' name='Street' ordinal='5' />
+                  <column datatype='string' name='Alley' ordinal='6' />
+                  <column datatype='string' name='LotShape' ordinal='7' />
+                  <column datatype='string' name='LandContour' ordinal='8' />
+                  <column datatype='string' name='Utilities' ordinal='9' />
+                  <column datatype='string' name='LotConfig' ordinal='10' />
+                  <column datatype='string' name='LandSlope' ordinal='11' />
+                  <column datatype='string' name='Neighborhood' ordinal='12' />
+                  <column datatype='string' name='Condition1' ordinal='13' />
+                  <column datatype='string' name='Condition2' ordinal='14' />
+                  <column datatype='string' name='BldgType' ordinal='15' />
+                  <column datatype='string' name='HouseStyle' ordinal='16' />
+                  <column datatype='integer' name='OverallQual' ordinal='17' />
+                  <column datatype='integer' name='OverallCond' ordinal='18' />
+                  <column datatype='integer' name='YearBuilt' ordinal='19' />
+                  <column datatype='integer' name='YearRemodAdd' ordinal='20' />
+                  <column datatype='string' name='RoofStyle' ordinal='21' />
+                  <column datatype='string' name='RoofMatl' ordinal='22' />
+                  <column datatype='string' name='Exterior1st' ordinal='23' />
+                  <column datatype='string' name='Exterior2nd' ordinal='24' />
+                  <column datatype='string' name='MasVnrType' ordinal='25' />
+                  <column datatype='integer' name='MasVnrArea' ordinal='26' />
+                  <column datatype='string' name='ExterQual' ordinal='27' />
+                  <column datatype='string' name='ExterCond' ordinal='28' />
+                  <column datatype='string' name='Foundation' ordinal='29' />
+                  <column datatype='string' name='BsmtQual' ordinal='30' />
+                  <column datatype='string' name='BsmtCond' ordinal='31' />
+                  <column datatype='string' name='BsmtExposure' ordinal='32' />
+                  <column datatype='string' name='BsmtFinType1' ordinal='33' />
+                  <column datatype='integer' name='BsmtFinSF1' ordinal='34' />
+                  <column datatype='string' name='BsmtFinType2' ordinal='35' />
+                  <column datatype='integer' name='BsmtFinSF2' ordinal='36' />
+                  <column datatype='integer' name='BsmtUnfSF' ordinal='37' />
+                  <column datatype='integer' name='TotalBsmtSF' ordinal='38' />
+                  <column datatype='string' name='Heating' ordinal='39' />
+                  <column datatype='string' name='HeatingQC' ordinal='40' />
+                  <column datatype='string' name='CentralAir' ordinal='41' />
+                  <column datatype='string' name='Electrical' ordinal='42' />
+                  <column datatype='integer' name='1stFlrSF' ordinal='43' />
+                  <column datatype='integer' name='2ndFlrSF' ordinal='44' />
+                  <column datatype='integer' name='LowQualFinSF' ordinal='45' />
+                  <column datatype='integer' name='GrLivArea' ordinal='46' />
+                  <column datatype='integer' name='BsmtFullBath' ordinal='47' />
+                  <column datatype='integer' name='BsmtHalfBath' ordinal='48' />
+                  <column datatype='integer' name='FullBath' ordinal='49' />
+                  <column datatype='integer' name='HalfBath' ordinal='50' />
+                  <column datatype='integer' name='BedroomAbvGr' ordinal='51' />
+                  <column datatype='integer' name='KitchenAbvGr' ordinal='52' />
+                  <column datatype='string' name='KitchenQual' ordinal='53' />
+                  <column datatype='integer' name='TotRmsAbvGrd' ordinal='54' />
+                  <column datatype='string' name='Functional' ordinal='55' />
+                  <column datatype='integer' name='Fireplaces' ordinal='56' />
+                  <column datatype='string' name='FireplaceQu' ordinal='57' />
+                  <column datatype='string' name='GarageType' ordinal='58' />
+                  <column datatype='string' name='GarageYrBlt' ordinal='59' />
+                  <column datatype='string' name='GarageFinish' ordinal='60' />
+                  <column datatype='integer' name='GarageCars' ordinal='61' />
+                  <column datatype='integer' name='GarageArea' ordinal='62' />
+                  <column datatype='string' name='GarageQual' ordinal='63' />
+                  <column datatype='string' name='GarageCond' ordinal='64' />
+                  <column datatype='string' name='PavedDrive' ordinal='65' />
+                  <column datatype='integer' name='WoodDeckSF' ordinal='66' />
+                  <column datatype='integer' name='OpenPorchSF' ordinal='67' />
+                  <column datatype='integer' name='EnclosedPorch' ordinal='68' />
+                  <column datatype='integer' name='3SsnPorch' ordinal='69' />
+                  <column datatype='integer' name='ScreenPorch' ordinal='70' />
+                  <column datatype='integer' name='PoolArea' ordinal='71' />
+                  <column datatype='string' name='PoolQC' ordinal='72' />
+                  <column datatype='string' name='Fence' ordinal='73' />
+                  <column datatype='string' name='MiscFeature' ordinal='74' />
+                  <column datatype='integer' name='MiscVal' ordinal='75' />
+                  <column datatype='integer' name='MoSold' ordinal='76' />
+                  <column datatype='integer' name='YrSold' ordinal='77' />
+                  <column datatype='string' name='SaleType' ordinal='78' />
+                  <column datatype='string' name='SaleCondition' ordinal='79' />
+                  <column datatype='integer' name='SalePrice' ordinal='80' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
   <worksheets>
     <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Price per square foot of living area</run>
+          </formatted-text>
+        </title>
+      </layout-options>
       <table>
         <view>
-          <datasources />
+          <datasources>
+            <datasource caption='train (train)' name='federated.0lrc7yb1as09ix112l0bt02qj3lu' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0lrc7yb1as09ix112l0bt02qj3lu'>
+            <column caption='[Sale Price]/([Gr Liv Area] + [Total Bsmt SF] - [Low Qual Fin...' datatype='real' name='[Calculation_1679561222505230338]' role='measure' type='quantitative' user:unnamed='Sheet 1'>
+              <calculation class='tableau' formula='[SalePrice]/([GrLivArea] + [TotalBsmtSF] - [LowQualFinSF])' />
+            </column>
+            <column caption='Gr Liv Area' datatype='integer' name='[GrLivArea]' role='measure' type='quantitative' />
+            <column caption='Low Qual Fin SF' datatype='integer' name='[LowQualFinSF]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Neighborhood]' role='dimension' type='nominal' />
+            <column caption='Sale Price' datatype='integer' name='[SalePrice]' role='measure' type='quantitative' />
+            <column caption='Total Bsmt SF' datatype='integer' name='[TotalBsmtSF]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1679561222505230338]' derivation='Median' name='[med:Calculation_1679561222505230338:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Neighborhood]' derivation='None' name='[none:Neighborhood:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0lrc7yb1as09ix112l0bt02qj3lu].[none:Neighborhood:nk]'>
+            <groupfilter from='&quot;Blmngtn&quot;' function='range' level='[none:Neighborhood:nk]' to='&quot;Veenker&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0lrc7yb1as09ix112l0bt02qj3lu].[none:Neighborhood:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0lrc7yb1as09ix112l0bt02qj3lu].[med:Calculation_1679561222505230338:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0lrc7yb1as09ix112l0bt02qj3lu].[none:Neighborhood:nk]</column>
+          </slices>
           <aggregation value='true' />
         </view>
-        <style />
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0lrc7yb1as09ix112l0bt02qj3lu].[med:Calculation_1679561222505230338:qk]' scope='cols' value='Price per square foot' />
+          </style-rule>
+        </style>
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
@@ -28,13 +1683,13 @@
             <mark class='Automatic' />
           </pane>
         </panes>
-        <rows />
-        <cols />
+        <rows>[federated.0lrc7yb1as09ix112l0bt02qj3lu].[none:Neighborhood:nk]</rows>
+        <cols>[federated.0lrc7yb1as09ix112l0bt02qj3lu].[med:Calculation_1679561222505230338:qk]</cols>
       </table>
       <simple-id uuid='{BA94CC73-556F-41FC-80D7-BA53C8701954}' />
     </worksheet>
   </worksheets>
-  <windows>
+  <windows source-height='30'>
     <window class='worksheet' maximized='true' name='Sheet 1'>
       <cards>
         <edge name='left'>
@@ -56,23 +1711,152 @@
           </strip>
         </edge>
       </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0lrc7yb1as09ix112l0bt02qj3lu].[med:Calculation_1679561222505127937:ok]</field>
+            <field>[federated.0lrc7yb1as09ix112l0bt02qj3lu].[none:Neighborhood:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
       <simple-id uuid='{C6E7F919-3035-4852-8D87-EDDB32E0BF80}' />
     </window>
   </windows>
   <thumbnails>
     <thumbnail height='192' name='Sheet 1' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
-      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
-      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
-      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
-      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
-      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
-      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
-      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
-      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
-      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
-      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
-      fBUOM1sAAAAASUVORK5CYII=
+      AAAbn0lEQVR4nO2d55Mb+Z2fn47IeYDBYBI5M0ybpV2XbMl1tu8f9RuHUrnKd2VJV2dZt5JW
+      ljaQWi5FTo6YgEHOuZNfcL3SnlbSAJwGmsXf85IzwNMfDr7o7m//guQ4joNA8IYiz/sABIJ5
+      IgpA8EYjCkDwRiMKQPBGIwpA8EYjCkDwRiMKQPBGIwpA8EYzlwKwLMt1h2marjtm5RFZ3POo
+      Lh/Hd/KLJyd8unPlqsNxHCRJctUxK4/I4p5n4gIY1s7Zb2jkNIPw+hoBoNFokEgkMPp92oZB
+      KhYDoFgskk2GydeHJEN+IpEwAIVqh6eHxUnVAsGtM3EBOI5Fr9WlrjoMlTzV1pBYJIA9aHFw
+      XCC1usTZwR5aOI3VvuLq1GHki7FXKvHRj/6OVNTvRg6BYCqmugdYXV/hPH+JMTbYfHifYa9H
+      szNgY2Mdc9gmubiGY4yIZ1b48HvvEk8kWV9fJxrUb/v4BYJXYuIzgB7NkpEDhH/4If5QCF2R
+      WF9bQ5dtzgs1lpdyfPKLX7H04EOy2SxoKuvZIP1mmcHYRFNFEQi8gzSP4dCX5SaNzshVh2lZ
+      qIriqmNWHpHFPc9cCqDbH2La7jpM00RV3W9yzcIjsrjnmfhIbMuk1x8QDIVR5L/eZjJGQwYj
+      g2AohKr88Xbjf/xyh3/87cGkaoHg1pm4AE4OthnjZyGVoNMfsra8xHA4JBgMMRr2kFQfChaG
+      LVM+O2SAg+xPs5FL4kgKPn0ujx4Egu9k4k9jNrvE3lGevk+lWG1i9FrYODhygEG/gaL5aVyc
+      0DSDPLybpjMak4nZfPn4Kffee08UgMBTTPxp7PW6L1/oD6E6FVQ1SL3ZJplOspBJMu61kUZZ
+      FoIJNGmENJYwxga5tQ1S0eCtBxAIXoW53AT/+F+e8/Mnp646vPbI3euOWXm8lmUuBTCLToBh
+      GGia5qpjVh6RxT3PXC7Id84qHBearjos20aR3R/sOguPyOKeZ6ICcGyTo/1d5HCazdXsJK/E
+      MCw07aXu9/vXog0q8AQTFYA57tHqWmzkQlQLea6bI1bSUc4KRXyKSnxxBbtbZqRGiekW3ZHF
+      sN0gEIux9+JADIYTeI6JCkDVw2zeWeLk7ARd0lhKqpzla+S2lhn1DPrVa04uLoklFxkGJDY3
+      N9itlFAdlXv3H5KM+NzKIRBMxUQFYNtjrq4KxJJZItKAq8aIO3eW0AMBgqqFEQgCJoYWJZOK
+      4NN0Aj4dvz/IqHdFvZshFRFnAIF3mEsX6MneJXvndVcdtm0jz+BmaxYekcU9j2iDvgYekcU9
+      z1zaoD/53QG/fJp31eG1By5ed8zK47UsExWAMWzz5Ktj3r+XoqUusRTTAIMvP3uCqWjcf/AA
+      TfMTCmhcXV6yvLLyne/T7AzJl1qTqAUCV5jsOQAQ0iyuyk1M3SG/VyK5uIjmDxNSLVqdFgo9
+      di7PQQ/SqZeptYcs51K82Dniwx/9R5YSIZeiCASTM/HdSCq7SqN0ybjfI5JMMRr0wbHojiV0
+      acyg3yUYTRHwSZiORkiXaTTbJNNpFEmswyXwFhOdATQ9RGYxRCrxd8i6n06zQTiWQHIcFBnG
+      psVCRqXTbKIHc+R3n1IbyPzoh+/TbjSJh8V8YIG3mEsXqN7uMRi5uzqc1+aeet0xK4/Xssyl
+      C2RaNiPD5QIwTawZpJuFR2RxzzPhoTgMhyP8Pp3ByCDg/+6hDZY5xpE0VOW721A/+92hGAwn
+      8AQT1+L52Rl37uQoFDskQgpqMI5s9hjYGiEdmq0efs3EUlJEQirtRpVQPAXjIZbiIxoSQyEE
+      3mHCApBYjPs4OLokmV3g099+SiSTw2iVMZQoK8txAn6NXsvi7PqS9x4t8fjxczJ31pF6Bo8+
+      eNedFALBlEx8Bggns/QudnkYDZPJpIllFxn6HPAliMZDpGJ+mrUuDzcjDAyHdCZDJpVEXwgQ
+      DogukMBbzKUL9JPf7vHJHy5cdXjtkbvXHbPyeC2LGAz3GnhEFvc8c2mDPtkv8OKs6qrDsW2k
+      GQy7nYVHZHHPM3UBXJ8fcpQvsb71gFQ8Qijwx+5Os1Yjkkrxlx5D7J5V+Ylogwo8wNQFsLS2
+      QbNrk0uEqDTrnByUGFugqH4imslR/pyNzU1K56dEF3MMalVCmRWWUpHbPH6B4JV45Usg2zTo
+      d9sEkzmC4w4hSaaNj/vZIPtHuzTqA1b8fiTHTzYZvo1jFghujVcoAJlsNoPiC7CQXkRS/WAF
+      UAF11OH0ss47b7/P2eE+kViKqD84k7t/gWAS5tIF2j4tkS+1XXXYloU8g0FXs/CILO55RBv0
+      NfCILO555tIG/fEvt/mnz47noRYIvsXUBTBsl3m2myeSyrCejjLoNWg4fpL+BKlU4F/9tkW1
+      2mZhIQHAeGzRHYxf5bgFglth6gJoFBtsvbXF6WmJxvUQOapgWwb7L74ikklSOdmhSYKt5SCy
+      7ucqXxRLIwo8x9QFEE2F2d7PY8sytqohowASmq6DY+GLJNlKLREIqmzdXWfc6aP8hfkBAsG8
+      mLoAgskc34ss4EgKqiyBJJEFjEwGVffhWFtYjoSmKkjIvPv97yMrYnskgbeYSxdoOBrj4O7Z
+      wGvbcXrdMSuP17LM5Su5VO9Sbg1ddViWiTKDM84sPCKLe56Jj8SxLc6OD4ll10lG/nW354/0
+      mhVahkYuHf+zn3385ZmYEyzwBBOPSy3mj/GnlvHJDtXiFZVqme3tPbr9HsPBkGqjRbfd4PPH
+      TzDGIw739+gMhjSqZSqNrhsZBIKpmfgM0B/brCYiSIMuB5U66wtR6tUitiIhmWP6I5tELMra
+      xj18Rh01mSN/sseoJ/Peh++4kUEgmJqJzwCrK4s8e/yY63qftdVVJCT8oQjxRBLZltjIxtDj
+      KSKRKPFUhsLpPuHEIivrq2iKWBpR4C3m0gX6lyfHfLF/7arDazOPvO6YlcdrWcRguNfAI7K4
+      55lLG/STZ3meHBRddTi2gyTPYPWBGXhEFvc8UxdAu3LFfr7E5sO3SIb9YI24LLWR7NE3G2NY
+      4z7Pn+8QXVxlY2Xxm9fmiy1++9zdZVEEgpswdQEUah0++uj7jDo1Hn/xBzK5HL2+hWT1cE72
+      uKq2SCfjrNz/gIWIzfbTpyTXNllKRW/z+AWCV2LquxHFMej2h1SLBZbvPaRTr33zs94YVtMR
+      LEml3W4xGPbRw2nx4Rd4jqkLYGPrHpenx8SXt+gWL1nfesBKLs3KygpOr8wvv9gjs3wHbVSj
+      0bXJ5RZu87gFglthLl2g00KdUrPvqsNrc0+97piVx2tZ5lIAo7GB5PJ+YV4bdeh1x6w8Xsty
+      oyNxHAfLNJFkBWWCp7mOYwPSN7t2O4AsSfy3//NcDIYTeIIbFYDRLfHF80uWVpZZzy3gIKHI
+      Mi83TpVxnK8/4I6DbVlIioLkOLRrRXr4OHnxnLfee4shfpYXYu4mEggm4EYFoAbiRHwXWJbN
+      889/xYtrk3/3/hbmuIush7ENk2A0xqDb5NmTxyTuvkVCGrF05y71coHkUpbr6xJr98VgOIG3
+      uNH1jD0eYiDT77WxlCCrqRjJuErHCtMolVi/f4/r/BGpzCIrd7a4u5IlnbvDci7HsFcjl1ui
+      0hgQ9onBcAJvcSs3wcagzdl1m3sbKzf6/f/yv7/iZy6vC+TgILk87XJWHpHFPY8YDPcaeEQW
+      9zxzGQx3eFnnvOzu2qCWZU/UsfKyR2RxzzNdATgO1eI55a5DdiFGMpH47l+zLU4P99HiWVYX
+      k9/8+2fbl6INKvAEUxWANR5Qbhvcu7vGwfExQQ0Oz0ps3M1xfHjK+uYm3WaV4XCAFl9hMaFR
+      vDxHCiZYTIoNMgTeYapzkWPbaJqO8vV1/P7ONp12g+vCNb1uk6OTM8odi1hIx+fzoaoOxUqP
+      hYTYIEPgLaY6A6j+ILp9wfb+CalEgkAixHGhQSQSptOJkEwlCUViJEMKO9vbDBayrKwuo4gN
+      MgQeYy5doN89z/Pi1N1dIm3HRnZ5vNGsPCKLex7RBn0NPCKLe565tEH/+Ytj/q/LUyK9tiO5
+      1x2z8ngty0QFMOoUefyHcyKJJNGQyt31O3/198ejAaajEPTr3/r3SqPHbt7dSyCB4CZMVAC2
+      NWZs2gAM+gOuT/Y5q1SRHY2FbJZa+RrJFyUdtLmuNgkFAjQHDosxH412jwfvfEAi7HMliEAw
+      DZNdAkkyuZV1+t0qmq5iSzoP376H0ZHp9ZqkVzZg1GXY77IQDaBEsgQtG8kxeTu7yMg0AFEA
+      Au8wUQHowQX88jWZOxsEdBlFlpFVGUeHWCIMsgJOlIuDZ+xeNPkP/+ldes0q0Xgavybjn34K
+      skDgCnPpApXqHdp9dzfJM00LVXV/7uksPCKLe565dIF8mkIk4O6lkGmZqDPYiGEWHpHFPc9U
+      RzIe9mh2+sTiCSTHQdcn6+v+wyd7YjCcwBNMVQCl8wtGqkKl0UI2YXNzDVlyQJZptTrEYlFa
+      zSaqY1Boj9hcXaLT6RFPJFBmsC6kQHBTpioAWfOxnEtzcnoFSBwfnRJSRlS6A84LZT744Hvs
+      P/uStY1NupbMwbPHHBWb/ODf/z1LieAtRxAIpmeqAgj4FbZf7JNbu4vmOAzaZRo9mbsbG0iy
+      TijoZ2lllezKKoWLc7Lrm4yVIgFdbJMq8BZz6QL9fu+K/Yu6qw7Ltr9eusVdZuERWdzziMFw
+      r4FHZHHPM5drkv/1230+fpp31eG1QVded8zK47UsUxVAv3zM86rOe6s6T15c887DdRQglEig
+      AFgDLst9VpZS37ymVr5EDqRJRHy0uiMuXJ4ULxDchOnOAJKEMRpQLncJhQLU62UqF5dE1zax
+      WlV8kRiV6zKX1zHSviHb+TqPHtwloc/8aksg+KtMeQkkkYnrXLcGxHQYjy2Wl3NIYT+1jk4s
+      EkTz3QOzT7NUZzGTfvmcQCDwGFMVgD+5wt2ExFrOfjm8TXKQcegOTVJbQca2TDLpBxKs5BZp
+      dgbEomGUGTwCFwgmYS5doEa7z9CwXHV4bR16rztm5fFalrl8JY9Ni97AcNXxcjCU+7U9C4/I
+      4p7nxgUwHnQxZT+S/fKD69M1eoMRfk1B0nR6nS6x2M02wfunTw/FYDiBJ7hxATQvLzg1VSKY
+      hBSZ8EKI3aMWy0kfi0spnj/b5cMf/oBevYzpKNgOpJMRSpUmmXSCUqnK4lIOXRWTYgTe4cYF
+      IKt+UrpJoTRmbTPJi6MGmYSPoSPRuMwjaRKFQpFuq4057hEL+Hl6fky12uLu5hrXhQbRhQy6
+      qv9tmUAwI278daz6fCytrOOM+gQiCyiqTS6uYSlhRkqQR/c2cIwR6cwiS7kc6YUkqVSKdGaR
+      RCxBQIeRYbqZRSCYmLl0gX76uz1+84dLVx1ee+TudcesPF7LIgbDvQYekcU9z1zaoI/3Crw4
+      rbjq+P9bs7rNLDwii3ueqQrAGHbY3jkguXSHtT8Z8HZT9vJVfvrp4TRqgeBWmW5SfK/ByPER
+      jwY5O9hhIIdJRf2Yww6+8AL9TpNkJkO306FWKhBbzDGoVgktrrKUEhtkCLzDVAXgC2d4tBXm
+      9PgIY9ilUC8RubdEY2gxLu5z594Wuy9eEI+HuCw2wR9AkoJkk2KDDIG3mKoAHNvg7PSc3J1N
+      uuULoulVMpkQvrHKuN8h4lOwZJ27d7cwRgbRWIqIPziTu3+BYBJc6QLZlonlSGh/YWWunbMS
+      56XObWu/hWVbKLL7K5DNwiOyuOcRbdDXwCOyuOeZSxv0xx9v89PPjuahFgi+xZQFYPHZr3/N
+      o+99xHW1SrtQwFIUkqklNu7foX5+hD9zl/LFCamFBQb1EmNfgGgkSyrmY2xY9IfuDocWCG7C
+      1E8k0kvLFM7z2LaNJKvoqsKw2+TF9i7+cIxKIQ9aiHKljG3b2LbNHK62BIK/ytQFIGsBYj6L
+      Zt8kkc7y7gffJxkLo0sWciBK7fKMRCqFbdm3ebwCwa0y5U2wg207SBLYNkgSyLL88mwAOEg4
+      jo0sKzjOHwtAkiQkSeI//+xLMSFG4Anm0gUajY2XVeMipmGiajOYezoDj8jinmcuXaDrWodS
+      c+Cqw7IsFGUG/eYZeEQW9zxTFUAhf0S9b/PgwT00WWLQ6+MLBcEccXhwxOL6JvGQH4DRoIfi
+      C/GnMyF/+eWZuAQSeIKpboJHpkQ2pnBVbFAqXJLPX9Lrd7g8OUCJZ1GcMefn17SqBb78/Vd0
+      Bj129w4YW6ILJPAWUxVAq1rgvNRFdbqU6gN8To+vds5Y2XyE07rkulqn121TKPe4u7LIyc4L
+      KpUipbq7wx8EgkmZ6hIoGArRHhgoeojVlST2qM99Z0yhcEW7Z5BOBJAVP/1WkasaZHOLXBVq
+      hPxiQrzAW8ylC/Tx7495vF901eHYNtIMZh7NwiOyuOcRg+FeA4/I4p5nLm3QXz/L83jv2lWH
+      11Yf8LpjVh6vZZm6AIpnB1iRLPagzUo2zbOdI95/9+0bPd86L7b4dNvdZVEEgpswdQFYtkKl
+      eIUmQzcgoTgWtU6Py4MdBqaFrvlZWUlzfl5ieXmBi6sa77z3LiGfWCJd4B2m/zRKMmuLET5/
+      foHUb9AZWthXV8QW14hZfaIq7BwcIqsBTFuC8YD2YEjIJ+YFC7zD1AWQzCziC/r53iOdcDjI
+      W+EgnXYHWfODE0aT4MNEitOzK2LRCN1kimRYbJIt8BZz6QKdXdcpi7FAnnLMyuO1LHMpgOFo
+      DJK7vWCv7UTidcesPF7LcoMjcTBNC0VVsU0TSVGRv6PTY3/94OHPfuQ42F+3pBwHZFniv//i
+      hRgMJ/AEN/gatvn044/pjC0+//gnFLsOo9EI27YZjYaYlo1lGhSOjunb9jc/s20b07Kw7TEH
+      h6f06kUKNbE3sMBb3OhclF3NUcwfEwjHqZ/v8YsvH/PORz+iuPs5/qVHpP02vc6YNmPG3QGS
+      7ifo99HsDElEwvhkg+tah5WNrNt5BIKJuNGFuB6I0a2USC8voWo+Nu8/IhlWiC2sE9IkLNPE
+      4eVCWOOxSSyZolKqkdBtlGiCVCJCtWsQUMXKcAJvMZeb4P/682f87HOX1wVy4M9vSF5Tj8ji
+      mkcMhnsNPCKLe565jEs4uKiRL7t7Q2xbNrIyg40YZuARWdzzTF8AjsX+9gsMNcSjB1soElSu
+      zriq9bj/8AFB/eVbt+sNgsnEt0Sf71yJNqjAE0xfALaBo4cJGF3qrRbteh3Dknj7/hr7x6dE
+      dYuxFkPpNnF8MuenV9x78AC/5v5TQIHgprzSuajbajBGYli/xg6m8amgaDqyM6bZ6nC8f4gF
+      nOzt0Go1qLb6t3TYAsHtMH0BSAp+TWJgSMSSC2STYXySwVfPdsmu3sHn85FdyhJLJlhbXyfg
+      D4g5wQLPMZcu0Kcvztk+q7rq8NpuhF53zMrjtSyiDfoaeEQW9zxzaYP+8+dHfPKHC1cdXpt7
+      6nXHrDxeyzJRARztPqM1cLj/6B0iASgU6uRymb/6mk6nBoSJRHzf/Ful2Wf/ojaJWiBwhYkK
+      YDQaATrjXo0vnp+i6FEsx6BWrrKYTmJaI/aOLnj7/joXtSGpoMRVpcra4hK/f1rl3/zgIzEn
+      WOApJrob0YMR1tdWYdgltrhMIBCkVSkQDGjky1367RYKBs1Wn417DzFNk1x2AV0PoNkjmr2h
+      WzkEgqmY6Os4m0lTb/fILK4SrZUJLWTRSKHofpbGBqo9JppZIxENo/pkIuvr1NoDUvEIjnyP
+      TEzMCRZ4i7l0gcr1Dp2Bu5vkmZaFOoO5p7PwiCzueeZyQa6pMgGfu60w05RmNPfUfY/I4p5n
+      oiMxRn1a3RHJZAzDsPDpGqZh0Ot1GI4MQtEE4cDfftr7j7/ZF4PhBJ7gxjfBjm2yt7tPq1bk
+      7PyK4/Mrhv0ORy926VkD9vdPsW2LRq3KYDhibJj0+31MY8xg0KNarWLZYoMMgbe4+RnAMtEj
+      CTbWMuyfnIOscHx8hmNZxFJp0gtDpEGVi/IQ27wiqPuoN1rEkklsY4AsyThqkHRc3AgLvMON
+      zwCSqiMPmzx++oJkKoNP9+GYI3ojExkJn09H8wUYdOrogQSW0WN1bRnDkonFU6yt5BAjoQVe
+      Yy5doH/4ZIePv8y76nBwkGYw+XQWHpHFPY8YDPcaeEQW9zxzaYN+dVRk/6LuqsNrw2697piV
+      x2tZpiqARqOB7gzZPr1m7c4WEWXE/sklK+t3KJ0f0TUV1jJxCrUmd7ce0rjYp+8EeOvRfTRF
+      5vlxWbRBBZ5gqlJsNpsYgyFbb79P5fqCi+sy7773DpVSkY31dZZX1lBsibfevUe5UEYLxsnG
+      NBqd0W0fv0DwSrziucjBAXAcHMfmT+8mjGGb3/zqMxKLaSpXxzw/LhGP+F9NJxDcMlNdAiWS
+      SXR7wPb2c+5u3iekjNjZ3mVt8wG6ahPXZZTAOn9//xGtepf773yErsBwOEIPiSIQeIe5dIGe
+      HV1zXGi66vDaAkxed8zK47Usog36GnhEFvc8c2mD/s9Pdvn541NXHV574OJ1x6w8XssydQE4
+      1pivnj5F8scJBVSWEhr7BZtMCCRFwadZnFxWWclm6OMnHQFZjhGN+ugNDCpikSyBB3iFhbFk
+      dE1F031EFIt8eYTfZzAyLbBMNL8fHAddUzBMC9u2sMVoUIHHmL4AHIdgKMKgWcefiFOtt0nY
+      Pfpq6OsfyyRiQSqtPv1qgdPTS2QxIV7gMab/RMoqi0tLLC7rBPwa//ajOJoskUZGxgEcFNVP
+      MBTGMoYYtkwoIApA4C3m0gVqdwcYlu2qw2v70XrdMSuP17LMrQ36pv1He90xK4/XsszlmkSS
+      JNeXx5uFY1YekcU9z1zOAAKBV3D/mfR34lC8PKPVc2d0qOOMOdzdpVhrufL+AN1mjd7QwBj2
+      OM1fYrnwPeLYJuVKFRyHi9NDzi5Lt+4Ah1rpistizdUstjHk6OCQgWG5l8WxKZyfUCjXMYZd
+      TvOX2H8jy1wKYNCs0BrL5M9OcOP0Y3WKGIFFktGQC+8OYNGu1qh3+5ydnqHZfQq17q1b+p02
+      lVod2zbpDk0W04lbd2CbmJKPbqXA/snXWeq9W9d0uz2SqSj503O6I4usG1kcm2A0SfnijMOT
+      PJrV4+pvZJlLARhji3giiV9VXCkAlAjdyjH7J5duvDugkM6kkCRA1ckuxBiOzVu3hGJJgj4N
+      SQJz0OHZtguTiGQVZ9QhvrSGT9PJLkQZjm4/S8CnU2n02Li7jNlv85VLWQatGo7uB+Vmf5e5
+      FEA4EefqeAf0sCsHMDYtFFkiEAy48O6AbXB4dMzZySkhn8KTnQuyyfCta1qVAvl8nvNCCQuF
+      YMCFPOaAk/NrisUCYb/Kk51LssnbP3MWrs5pNxuUq9WXWVz429jGkGqzhWPZJIIqT3Yv/+bf
+      RdwEC95o5nQTLBB4A1EAgjcaUQCCNxpRAII3GlEAgjcaUQCCNxpRAII3GlEAgjcaUQCCN5r/
+      B36UrJS1mWezAAAAAElFTkSuQmCC
     </thumbnail>
   </thumbnails>
 </workbook>

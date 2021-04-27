@@ -1515,6 +1515,29 @@
       <column caption='Misc Val' datatype='integer' name='[MiscVal]' role='measure' type='quantitative' />
       <column caption='Mo Sold' datatype='integer' name='[MoSold]' role='measure' type='quantitative' />
       <column caption='Open Porch SF' datatype='integer' name='[OpenPorchSF]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Overall Cond (group)]' role='dimension' type='ordinal'>
+        <calculation class='categorical-bin' column='[OverallCond]' new-bin='true'>
+          <bin default-name='true' value='&quot;1, 2, 3&quot;'>
+            <value>1</value>
+            <value>2</value>
+            <value>3</value>
+          </bin>
+        </calculation>
+      </column>
+      <column datatype='string' name='[Overall Qual (group)]' role='dimension' type='ordinal'>
+        <calculation class='categorical-bin' column='[OverallQual]' new-bin='true'>
+          <bin default-name='true' value='&quot;1, 2, 3&quot;'>
+            <value>1</value>
+            <value>2</value>
+            <value>3</value>
+          </bin>
+          <bin default-name='true' value='&quot;8, 9, 10&quot;'>
+            <value>8</value>
+            <value>9</value>
+            <value>10</value>
+          </bin>
+        </calculation>
+      </column>
       <column caption='Overall Cond' datatype='integer' name='[OverallCond]' role='measure' type='quantitative' />
       <column caption='Overall Qual' datatype='integer' name='[OverallQual]' role='measure' type='quantitative' />
       <column caption='Paved Drive' datatype='string' name='[PavedDrive]' role='dimension' type='nominal' />
@@ -1634,7 +1657,7 @@
     </datasource>
   </datasources>
   <worksheets>
-    <worksheet name='Sheet 1'>
+    <worksheet name='Pricer per square foot'>
       <layout-options>
         <title>
           <formatted-text>
@@ -1688,9 +1711,95 @@
       </table>
       <simple-id uuid='{BA94CC73-556F-41FC-80D7-BA53C8701954}' />
     </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='train (train)' name='federated.0lrc7yb1as09ix112l0bt02qj3lu' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0lrc7yb1as09ix112l0bt02qj3lu'>
+            <column datatype='string' name='[Overall Cond (group)]' role='dimension' type='ordinal'>
+              <calculation class='categorical-bin' column='[OverallCond]' new-bin='true'>
+                <bin default-name='true' value='&quot;1, 2, 3&quot;'>
+                  <value>1</value>
+                  <value>2</value>
+                  <value>3</value>
+                </bin>
+              </calculation>
+            </column>
+            <column datatype='string' name='[Overall Qual (group)]' role='dimension' type='ordinal'>
+              <calculation class='categorical-bin' column='[OverallQual]' new-bin='true'>
+                <bin default-name='true' value='&quot;1, 2, 3&quot;'>
+                  <value>1</value>
+                  <value>2</value>
+                  <value>3</value>
+                </bin>
+                <bin default-name='true' value='&quot;8, 9, 10&quot;'>
+                  <value>8</value>
+                  <value>9</value>
+                  <value>10</value>
+                </bin>
+              </calculation>
+            </column>
+            <column caption='Overall Cond' datatype='integer' name='[OverallCond]' role='measure' type='quantitative' />
+            <column caption='Overall Qual' datatype='integer' name='[OverallQual]' role='measure' type='quantitative' />
+            <column caption='Sale Price' datatype='integer' name='[SalePrice]' role='measure' type='quantitative' />
+            <column-instance column='[SalePrice]' derivation='Median' name='[med:SalePrice:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0lrc7yb1as09ix112l0bt02qj3lu].[Overall Qual (group)]' value='188' />
+          </style-rule>
+          <style-rule element='field-labels-decoration'>
+            <format attr='font-style' value='normal' />
+            <format attr='font-weight' value='normal' />
+            <format attr='text-orientation' value='0' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0lrc7yb1as09ix112l0bt02qj3lu].[Overall Qual (group)]' value='n#,##0;(#,##0)' />
+            <format attr='font-size' field='[federated.0lrc7yb1as09ix112l0bt02qj3lu].[Overall Cond (group)]' value='10' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.0lrc7yb1as09ix112l0bt02qj3lu].[med:SalePrice:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+            <encoding attr='color' field='[federated.0lrc7yb1as09ix112l0bt02qj3lu].[med:SalePrice:qk]' num-steps='4' palette='blue_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.0lrc7yb1as09ix112l0bt02qj3lu].[med:SalePrice:qk]' />
+              <text column='[federated.0lrc7yb1as09ix112l0bt02qj3lu].[med:SalePrice:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='has-stroke' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0lrc7yb1as09ix112l0bt02qj3lu].[Overall Qual (group)]</rows>
+        <cols>[federated.0lrc7yb1as09ix112l0bt02qj3lu].[Overall Cond (group)]</cols>
+      </table>
+      <simple-id uuid='{13F0582D-411E-4FB4-9B5B-CF739B38D4AF}' />
+    </worksheet>
   </worksheets>
   <windows source-height='30'>
-    <window class='worksheet' maximized='true' name='Sheet 1'>
+    <window class='worksheet' name='Pricer per square foot'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1721,9 +1830,49 @@
       </viewpoint>
       <simple-id uuid='{C6E7F919-3035-4852-8D87-EDDB32E0BF80}' />
     </window>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0lrc7yb1as09ix112l0bt02qj3lu].[med:SalePrice:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0lrc7yb1as09ix112l0bt02qj3lu].[Overall Cond (group)]</field>
+            <field>[federated.0lrc7yb1as09ix112l0bt02qj3lu].[Overall Qual (group)]</field>
+            <field>[federated.0lrc7yb1as09ix112l0bt02qj3lu].[med:SalePrice:qk]</field>
+            <field>[federated.0lrc7yb1as09ix112l0bt02qj3lu].[none:OverallCond:ok]</field>
+            <field>[federated.0lrc7yb1as09ix112l0bt02qj3lu].[none:OverallQual:qk]</field>
+            <field>[federated.0lrc7yb1as09ix112l0bt02qj3lu].[none:SaleCondition:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{62AA248D-49AE-4A43-BE2B-78A868191477}' />
+    </window>
   </windows>
   <thumbnails>
-    <thumbnail height='192' name='Sheet 1' width='192'>
+    <thumbnail height='192' name='Pricer per square foot' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
       AAAbn0lEQVR4nO2d55Mb+Z2fn47IeYDBYBI5M0ybpV2XbMl1tu8f9RuHUrnKd2VJV2dZt5JW
       ljaQWi5FTo6YgEHOuZNfcL3SnlbSAJwGmsXf85IzwNMfDr7o7m//guQ4joNA8IYiz/sABIJ5
@@ -1857,6 +2006,56 @@
       YMCFPOaAk/NrisUCYb/Kk51LssnbP3MWrs5pNxuUq9WXWVz429jGkGqzhWPZJIIqT3Yv/+bf
       RdwEC95o5nQTLBB4A1EAgjcaUQCCNxpRAII3GlEAgjcaUQCCNxpRAII3GlEAgjcaUQCCN5r/
       B36UrJS1mWezAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='164' name='Sheet 2' width='192'>
+      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
     </thumbnail>
   </thumbnails>
 </workbook>

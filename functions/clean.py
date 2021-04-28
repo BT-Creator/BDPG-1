@@ -20,6 +20,7 @@ def clean(df):
     df.loc[df['MasVnrType'] == "None", 'MasVnrType'] = replace_string(df, "MasVnrType", "None", None)
     for column in chained_columns:
         df.loc[df[column].isnull()] = fix_relationships_inconsistency(df, column)
+    df = apply_most_frequent(df, "MSZoning")
     return df
 
 
@@ -70,4 +71,10 @@ def fix_relationships_inconsistency(df, column):
         target_count = target_count + df.loc[df[column].isnull(), dependency].count()
         df.loc[df[column].isnull(), dependency] = None
     print("=> Done! Reverted " + str(target_count) + " values to None/NaN.")
+    return df
+
+
+def apply_most_frequent(df, column):
+    most_frequent = df[column].mode().values[0]
+    df.loc[df[column].isnull(), column] = most_frequent
     return df

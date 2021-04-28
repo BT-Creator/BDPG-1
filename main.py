@@ -1,6 +1,7 @@
 from functions.clean import *
 from functions.discover import *
 from functions.transform import transform
+from functions.elastinet import *
 
 
 def print_stage(msg):
@@ -25,3 +26,8 @@ discover_inconsistencies(test)
 test = clean(test)
 discover_inconsistencies(test)
 test = transform(test)
+
+
+# ElastiNet
+calculateElastinet(train)
+

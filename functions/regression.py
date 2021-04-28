@@ -15,8 +15,7 @@ def split_data(train, test):
 def linear_regression(train_data, test_data, ref_prices):
     l_reg = LinearRegression()
     train_data = prep_regression_data(train_data)
-    print(train_data[list(categorical_values.keys())])
-    l_reg.fit(train_data.values, ref_prices)
+    #l_reg.fit(train_data.values, ref_prices)
     # print(l_reg.predict(train_data))
 
 

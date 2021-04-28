@@ -2,6 +2,7 @@ from functions.clean import *
 from functions.discover import *
 from functions.transform import transform
 from functions.correlationmatrix import *
+from functions.ridgeregression import *
 
 
 def print_stage(msg):
@@ -32,3 +33,6 @@ print_stage("Generating a correlation matrix for train.csv")
 generate_correlation_matrix(train).show()
 get_best_correlations(train)
 
+# Ridge Regression
+print_stage("Getting the ridge regression")
+ridge_regression(train)

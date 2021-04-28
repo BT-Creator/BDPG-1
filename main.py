@@ -32,7 +32,7 @@ test = transform(test)
 
 
 # ElastiNet
-calculateElastinet(train)
+calculateElastinet(train, test)
 
 # Correlation Matrix
 print_stage("Generating a correlation matrix for train.csv")

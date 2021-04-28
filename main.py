@@ -4,6 +4,7 @@ from functions.transform import transform
 from functions.elastinet import *
 
 from functions.correlationmatrix import *
+from functions.regression import split_data, linear_regression
 
 
 
@@ -31,11 +32,19 @@ discover_inconsistencies(test)
 test = transform(test)
 
 
-# ElastiNet
-calculateElastinet(train, test)
-
 # Correlation Matrix
 print_stage("Generating a correlation matrix for train.csv")
-generate_correlation_matrix(train).show()
+#generate_correlation_matrix(train).show()
 get_best_correlations(train)
+# print_stage("Generating a correlation matrix for train.csv")
+# generate_correlation_matrix(train).show()
+# get_best_correlations(train)
 
+# Regression
+# train_data, test_data, ref_prices = split_data(train, test)
+# predicted_prices = None
+# linear_regression(train_data, test_data, ref_prices)
+
+# ElastiNet
+elastinet_predicted_prices = None
+elastinet_regression(train, test)

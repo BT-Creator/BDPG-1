@@ -86,7 +86,7 @@
     <td>I</td><td>Industrial</td>
   </tr>
   <tr>
-    <td>RH/td><td>Residential High Density</td>
+    <td>RH</td><td>Residential High Density</td>
   </tr>
   <tr>
     <td>RL</td><td>Residential Low Density</td>

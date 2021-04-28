@@ -1,6 +1,6 @@
 import pandas as pd
 
-from data.config import categorical_values, float_columns, date_columns
+from config.clean_params import categorical_values, float_columns, date_columns
 
 
 def transform(df):
@@ -12,10 +12,10 @@ def transform(df):
     df['CentralAir'] = df['CentralAir'].astype('bool')
     df[list(categorical_values.keys())] = df[list(categorical_values.keys())].astype('category')
     df[float_columns] = df[float_columns].astype(float)
-    df[date_columns.get('year')] = convert_to_date(df, date_columns.get('year'), '%Y')
-    df['DateSold'] = pd.to_datetime(df[['YrSold', 'MoSold']]
-                                    .rename(columns={'YrSold': 'year', 'MoSold': 'month'})
-                                    .assign(DAY=1))
+    # df[date_columns.get('year')] = convert_to_date(df, date_columns.get('year'), '%Y')
+    # df['DateSold'] = pd.to_datetime(df[['YrSold', 'MoSold']]
+    #                                 .rename(columns={'YrSold': 'year', 'MoSold': 'month'})
+    #                                 .assign(DAY=1))
     df = df.drop(['YrSold', 'MoSold'], axis=1)
     return df
 

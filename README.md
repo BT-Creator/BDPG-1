@@ -17,6 +17,7 @@ In order to visualize data, we've used **Tableau**. The Tableau data can be foun
 
 # Machine Learning
 The ML model is written within Python and performs multiple actions:
+## Cleaning
 - The CSV are transferred into a DataFrame (DF)
 - The DF is checked for illegal data. 
     - The discovery function is found in `funtions/discovery.py`

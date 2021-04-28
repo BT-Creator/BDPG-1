@@ -33,3 +33,7 @@ print_stage("Generating a correlation matrix for train.csv")
 generate_correlation_matrix(train).show()
 get_best_correlations(train)
 
+
+# Ridge Regression
+print_stage("Getting the ridge regression")
+ridge_regression(train, test)

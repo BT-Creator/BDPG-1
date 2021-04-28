@@ -1,4 +1,8 @@
-from data.config import chained_columns
+import math
+
+import numpy as np
+
+from config.clean_params import chained_columns
 
 
 def clean(df):

@@ -29,9 +29,9 @@ discover_inconsistencies(test)
 test = transform(test)
 
 # Correlation Matrix
-print_stage("Generating a correlation matrix for train.csv")
-generate_correlation_matrix(train).show()
-get_best_correlations(train)
+# print_stage("Generating a correlation matrix for train.csv")
+# generate_correlation_matrix(train).show()
+# get_best_correlations(train)
 
 # Regression
 train_data, test_data, ref_prices = split_data(train, test)

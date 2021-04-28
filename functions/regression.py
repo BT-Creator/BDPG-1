@@ -15,12 +15,25 @@ def split_data(train, test):
 def linear_regression(train_data, test_data, ref_prices):
     l_reg = LinearRegression()
     for key in categorical_values.keys():
+        values = categorical_values.get(key)
+        if train_data[key].isnull().values.any():
+            values = replace_None(categorical_values.get(key))
+            train_data[key] = train_data[key].cat.add_categories(-1).fillna(-1)
+            train_data[key] = train_data[key].cat.remove_categories(None)
+        print("############ " + key + " ############")
         print(train_data[key].unique())
         print(train_data[key].isnull().values.any())
-        print(categorical_values.get(key))
-        print(len(train_data[key].unique()) == len(categorical_values.get(key)))
+        print(values)
+        print(len(train_data[key].unique()) == len(values))
         train_data[key] = train_data[key].cat.reorder_categories(train_data[key].unique(), ordered=True)
+        train_data[key] = train_data[key].cat.codes
     print(train_data[list(categorical_values.keys())])
     # l_reg.fit(train_data, ref_prices)
     # print(l_reg.predict(train_data))
 
+
+def replace_None(array):
+    for n, value in enumerate(array):
+        if value is None:
+            array[n] = -1
+    return array

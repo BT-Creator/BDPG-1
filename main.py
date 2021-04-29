@@ -1,10 +1,10 @@
 from functions.clean import *
 from functions.discover import *
+from functions.regression import linear_regression
 from functions.transform import transform
 from functions.elastinet import *
 
 from functions.correlationmatrix import *
-from functions.regression import split_data, linear_regression
 
 
 
@@ -40,11 +40,11 @@ get_best_correlations(train)
 # generate_correlation_matrix(train).show()
 # get_best_correlations(train)
 
+
+
+
 # Regression
-# train_data, test_data, ref_prices = split_data(train, test)
-# predicted_prices = None
-# linear_regression(train_data, test_data, ref_prices)
+linear_regression(train.copy(), test.copy())
 
 # ElastiNet
-elastinet_predicted_prices = None
-elastinet_regression(train, test)
+elastinet_regression(train.copy(), test.copy())

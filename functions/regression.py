@@ -1,8 +1,14 @@
 import pandas as pd
-from sklearn.linear_model import LinearRegression
+from skimage.metrics import mean_squared_error
+from sklearn.model_selection import train_test_split
 
-from config.clean_params import categorical_values
 from config.regression_params import reg_params
+from functions.clean import *
+from functions.discover import *
+
+
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
 
 
 def split_data(train, test):
@@ -12,11 +18,30 @@ def split_data(train, test):
     return train_data, test_data, ref_prices
 
 
-def linear_regression(train_data, test_data, ref_prices):
-    l_reg = LinearRegression()
-    train_data = prep_regression_data(train_data)
-    #l_reg.fit(train_data.values, ref_prices)
-    # print(l_reg.predict(train_data))
+def linear_regression(test, train):
+    xtrain = prep_regression_data(train)
+    ytrain = np.log(xtrain.pop('SalePrice')).values
+    xtrain = xtrain.values
+
+    X_train, X_test, y_train, y_test = train_test_split(xtrain, ytrain, test_size=0.3, random_state=42)
+
+    # Create the regressor: reg_all
+    reg_all = LinearRegression()
+
+    # Fit the regressor to the training data
+    reg_all.fit(X_train, y_train)
+
+    # Predict on the test data: y_pred
+    y_pred = reg_all.predict(X_test)
+
+    # Compute and print R^2 and RMSE
+    print("===== Linear regresion =====")
+    print("R^2: {}".format(reg_all.score(X_test, y_test)))
+    rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+    print("Root Mean Squared Error: {}".format(rmse))
+    print("===== End Linear regresion =====")
+    print()
+
 
 
 def prep_regression_data(df):

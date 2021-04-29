@@ -1,5 +1,7 @@
 from functions.clean import *
 from functions.discover import *
+from functions.lasso import lasso_regression
+from functions.ridge import ridge_regression
 from functions.regression import linear_regression
 from functions.transform import transform
 from functions.elastinet import *
@@ -48,3 +50,10 @@ linear_regression(train.copy(), test.copy())
 
 # ElastiNet
 elastinet_regression(train.copy(), test.copy())
+
+# Ridge
+ridge_regression(train.copy(), test.copy())
+
+# Lasso
+lasso_regression(train.copy(), test.copy())
+

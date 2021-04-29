@@ -3,7 +3,7 @@ from functions.discover import *
 from functions.lasso import lasso_regression
 from functions.ridge import ridge_regression
 from functions.regression import linear_regression
-from functions.testregression import test_reg
+from functions.regression_helper import test_reg
 from functions.transform import transform
 from functions.elastinet import *
 
@@ -44,19 +44,15 @@ get_best_correlations(train)
 # get_best_correlations(train)
 
 
-test_reg(test)
+# Regression
+linear_regression(test.copy())
 
+# ElastiNet
+elastinet_regression(test.copy())
 
+# Ridge
+ridge_regression(test.copy())
 
-# # Regression
-# linear_regression(train.copy(), test.copy())
-#
-# # ElastiNet
-# elastinet_regression(train.copy(), test.copy())
-#
-# # Ridge
-# ridge_regression(train.copy(), test.copy())
-#
-# # Lasso
-# lasso_regression(train.copy(), test.copy())
+# Lasso
+lasso_regression(test.copy())
 

@@ -20,7 +20,7 @@ def split_data(train):
 def test_reg(train):
     prep = prep_regression_data(train)
     print(prep)
-    X, y = split_data(train)
+    X, y = split_data(prep)
     print("X", X)
     print("Y", y)
     print(train.dtypes)

@@ -1,7 +1,5 @@
 import matplotlib.pyplot as plt
-import pandas as pd
 import seaborn as sn
-import numpy as np
 
 
 def generate_correlation_matrix(df):

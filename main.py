@@ -37,22 +37,16 @@ test = transform(test)
 
 # Correlation Matrix
 print_stage("Generating a correlation matrix for train.csv")
-#generate_correlation_matrix(train).show()
+generate_correlation_matrix(train).show()
 get_best_correlations(train)
-# print_stage("Generating a correlation matrix for train.csv")
-# generate_correlation_matrix(train).show()
-# get_best_correlations(train)
+print_stage("Generating a correlation matrix for train.csv")
+generate_correlation_matrix(train).show()
+get_best_correlations(train)
 
 
-# Regression
+# Regression & prediction
 linear_regression(test.copy())
-
-# ElastiNet
 elastinet_regression(test.copy())
-
-# Ridge
 ridge_regression(test.copy())
-
-# Lasso
 lasso_regression(test.copy())
 

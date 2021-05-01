@@ -1,18 +1,15 @@
-import pandas as pd
 from skimage.metrics import mean_squared_error
-from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import train_test_split
 
 from config.regression_params import reg_params
 from functions.clean import *
 from functions.discover import *
 
 
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error
-
-
 def split_data(train):
-    y = train[reg_params.get('target_column')].values.reshape(-1,1)
+    y = train[reg_params.get('target_column')].values.reshape(-1, 1)
     X = train.drop(reg_params.get('target_column'), axis=1).values
     return X, y
 
@@ -40,8 +37,6 @@ def test_reg(train):
     print("R^2: {}".format(reg_all.score(X_test, y_test)))
     rmse = np.sqrt(mean_squared_error(y_test, y_pred))
     print("Root Mean Squared Error: {}".format(rmse))
-
-
 
 
 def prep_regression_data(df):

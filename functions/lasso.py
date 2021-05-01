@@ -1,17 +1,11 @@
-from networkx.drawing.tests.test_pylab import plt
 from skimage.metrics import mean_squared_error
+from sklearn.linear_model import Lasso
+from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 
 from functions.clean import *
-from functions.discover import *
-from functions.transform import transform
 from functions.regression import prep_regression_data, split_data
-from sklearn.linear_model import ElasticNet, Ridge, ElasticNetCV, Lasso
-from sklearn.datasets import make_regression
-import pandas as pd
 
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error
 
 def lasso_regression(train):
     prep = prep_regression_data(train)
@@ -28,11 +22,10 @@ def lasso_regression(train):
     # # Predict on the test data: y_pred
     y_pred = lasso.predict(X_test)
 
-
     # Compute and print R^2 and RMSE
-    print("===== Lasso regresion =====")
+    print("===== Lasso regression =====")
     print("R^2: {}".format(lasso.score(X_test, y_test)))
     rmse = np.sqrt(mean_squared_error(y_test, y_pred))
     print("Root Mean Squared Error: {}".format(rmse))
-    print("===== End Lasso regresion =====")
+    print("===== End Lasso regression =====")
     print()

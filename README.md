@@ -37,5 +37,5 @@ The model predicts the house prices with 3" different type of regression, these 
 **Q:** The discover function says that there are still illegal values in `MasVnrType`, `BsmtQual` and `GarageType`.<br>
 **A:** This is because, for the regression function to work, some values need to be altered that aren't considered validated by the config file that `discover` uses. These are mainly `NaN` files that are re-assigned a string value.
 
-**Q:** Some code in the transform function is in comment.
+**Q:** Some code in the transform function is in comment.<br>
 **A:** This was, because originally, there was decided to transform data within the dataset to the right dataset. But when transforming date data in the dataset, it doesn't play nicely with regression calculation. Because of this, we've decided to not do that.

@@ -1,6 +1,7 @@
 from sklearn.linear_model import Ridge
 from sklearn.model_selection import train_test_split
 
+from config.regression_params import reg_params
 from functions.regression import prep_regression_data, split_data
 from functions.regression_helper import print_results
 
@@ -9,7 +10,12 @@ def ridge_regression(train):
     prep = prep_regression_data(train)
     X, y = split_data(prep)
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X,
+        y,
+        test_size=reg_params.get('test_size'),
+        random_state=reg_params.get('random_state')
+    )
 
     # Create the regressor: reg_all
     rr = Ridge(alpha=1)

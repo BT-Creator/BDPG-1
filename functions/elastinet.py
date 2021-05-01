@@ -1,10 +1,7 @@
-from skimage.metrics import mean_squared_error
 from sklearn.linear_model import ElasticNet
-from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 
-from functions.clean import *
-from functions.regression_helper import prep_regression_data, split_data
+from functions.regression_helper import prep_regression_data, split_data, print_results
 
 
 def elastinet_regression(train):
@@ -23,11 +20,6 @@ def elastinet_regression(train):
     y_pred = elastic.predict(X_test)
 
     # Compute and print R^2 and RMSE
-    print("===== Elastinet regression =====")
-    print("R^2: {}".format(elastic.score(X_test, y_test)))
-    rmse = np.sqrt(mean_squared_error(y_test, y_pred))
-    print("Root Mean Squared Error: {}".format(rmse))
-    print("===== End Elastinet regression =====")
-    print()
+    return print_results(elastic, X_test, y_test, y_pred, "ElasticNet")
 
 

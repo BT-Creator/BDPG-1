@@ -1,10 +1,8 @@
-from skimage.metrics import mean_squared_error
 from sklearn.linear_model import Lasso
-from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 
-from functions.clean import *
 from functions.regression import prep_regression_data, split_data
+from functions.regression_helper import print_results
 
 
 def lasso_regression(train):
@@ -23,9 +21,4 @@ def lasso_regression(train):
     y_pred = lasso.predict(X_test)
 
     # Compute and print R^2 and RMSE
-    print("===== Lasso regression =====")
-    print("R^2: {}".format(lasso.score(X_test, y_test)))
-    rmse = np.sqrt(mean_squared_error(y_test, y_pred))
-    print("Root Mean Squared Error: {}".format(rmse))
-    print("===== End Lasso regression =====")
-    print()
+    return print_results(lasso, X_test, y_test, y_pred, "Lasso")

@@ -16,7 +16,7 @@ def transform(df):
     # df['DateSold'] = pd.to_datetime(df[['YrSold', 'MoSold']]
     #                                 .rename(columns={'YrSold': 'year', 'MoSold': 'month'})
     #                                 .assign(DAY=1))
-    df = df.drop(['YrSold', 'MoSold'], axis=1)
+    # df = df.drop(['YrSold', 'MoSold'], axis=1)
     return df
 
 

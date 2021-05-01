@@ -1,5 +1,3 @@
-import math
-
 import numpy as np
 
 from config.clean_params import chained_columns
@@ -22,22 +20,11 @@ def clean(df):
     df.loc[df['Exterior2nd'] == "Wd Shng", "Exterior2nd"] = replace_string(df, "Exterior2nd", "Wd Shng",
                                                                            "WdShing")
     df.loc[df['MasVnrType'] == "None", 'MasVnrType'] = replace_string(df, "MasVnrType", "None", None)
-
-
-
-
-
-
-
     df['GarageType'] = df['GarageType'].replace({np.nan: 'No garage'})
     df['BsmtQual'] = df['BsmtQual'].replace({np.nan: 'No basement'})
     df['MasVnrType'] = df['MasVnrType'].replace({np.nan: 'No masonry'})
     df['GarageYrBlt'] = df['GarageYrBlt'].fillna(0)
     df['MasVnrArea'] = df['MasVnrArea'].fillna(0)
-
-
-
-
 
     for column in chained_columns:
         df.loc[df[column].isnull()] = fix_relationships_inconsistency(df, column)

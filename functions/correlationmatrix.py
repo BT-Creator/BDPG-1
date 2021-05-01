@@ -9,7 +9,6 @@ def generate_correlation_matrix(df):
     :return: correlation matrix of DataFrame
     """
     corr_matrix = df.corr()
-    print(corr_matrix)
     plt.subplots(figsize=(30, 30))
     sn.heatmap(corr_matrix, annot=True, fmt=".2f", cmap='coolwarm')
     return plt

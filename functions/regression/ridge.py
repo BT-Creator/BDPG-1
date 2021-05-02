@@ -1,7 +1,7 @@
 from sklearn.linear_model import Ridge
 
-from functions.regression import split_data
-from functions.regression_helper import print_results
+
+from functions.regression.regression_helper import print_results, split_data
 
 
 def ridge_regression(ref, target, out_name):

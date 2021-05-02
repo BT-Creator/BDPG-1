@@ -1,7 +1,6 @@
 from sklearn.linear_model import Lasso
 
-from functions.regression import split_data
-from functions.regression_helper import print_results
+from functions.regression.regression_helper import print_results, split_data
 
 
 def lasso_regression(ref, target, out_name):
@@ -22,4 +21,4 @@ def lasso_regression(ref, target, out_name):
     target[['Id', 'SalePrice']].to_csv(out_name, index=False)
 
     # Compute and print R^2 and RMSE
-    return print_results(lasso, ref_data, ref_prices, y_pred, "Lasso")
+    return print_results(lasso, ref_data, ref_prices, y_pred, "lasso")

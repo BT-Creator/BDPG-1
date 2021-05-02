@@ -1,6 +1,6 @@
 from sklearn.linear_model import LinearRegression
 
-from functions.regression_helper import split_data, print_results
+from functions.regression.regression_helper import split_data, print_results
 
 
 def linear_regression(ref, target, out_name):

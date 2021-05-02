@@ -27,7 +27,6 @@ def prep_regression_data(df):
     for key in categorical_values.keys():
         if df[key].dtype.name is 'category':
             replace_categorical_na(df, key)
-    print(df.head())
     return df
 
 

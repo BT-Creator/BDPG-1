@@ -40,9 +40,9 @@ transformed_target = transform(target)
 print_stage("Fitting regression & prediction")
 predictions = {
     'Linear Regression': linear_regression(transformed_ref.copy(), transformed_target.copy()),
-    'ElasticNet Regression': elastinet_regression(target.copy()),
-    'Ridge Regression': ridge_regression(target.copy()),
-    'Lasso regression': lasso_regression(target.copy())
+    'Lasso regression': lasso_regression(transformed_ref.copy(), transformed_target.copy()),
+    'ElasticNet Regression': elastinet_regression(transformed_ref.copy(), transformed_target.copy()),
+    'Ridge Regression': ridge_regression(transformed_ref.copy(), transformed_target.copy())
 }
 best_prediction = None
 r2 = 0

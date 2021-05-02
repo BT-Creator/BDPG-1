@@ -1,30 +1,23 @@
 from sklearn.linear_model import Lasso
-from sklearn.model_selection import train_test_split
 
-from config.regression_params import reg_params
 from functions.regression import prep_regression_data, split_data
 from functions.regression_helper import print_results
 
 
-def lasso_regression(train):
-    prep = prep_regression_data(train)
-    X, y = split_data(prep)
+def lasso_regression(ref, target):
+    prepped_ref = prep_regression_data(ref)
+    prepped_target = prep_regression_data(target)
+    prepped_ref.drop(ref.tail(1).index, inplace=True)
+    ref_data, ref_prices = split_data(prepped_ref)
 
-    X_train, X_test, y_train, y_test = train_test_split(
-        X,
-        y,
-        test_size=reg_params.get('test_size'),
-        random_state=reg_params.get('random_state')
-    )
-
-    # Create the regressor: reg_all
+    # Create the regressor: lasso
     lasso = Lasso(alpha=0.4, normalize=True)
 
     # Fit the regressor to the training data
-    lasso.fit(X_train, y_train)
+    lasso.fit(ref_data, ref_prices)
 
     # # Predict on the test data: y_pred
-    y_pred = lasso.predict(X_test)
+    y_pred = lasso.predict(prepped_target.values)
 
     # Compute and print R^2 and RMSE
-    return print_results(lasso, X_test, y_test, y_pred, "Lasso")
+    return print_results(lasso, ref_data, ref_prices, y_pred, "Lasso")

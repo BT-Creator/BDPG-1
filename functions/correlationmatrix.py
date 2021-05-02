@@ -21,8 +21,7 @@ def get_best_correlations(df):
     :return: best correlating elements
     """
     corr_matrix = df.corr()
-    corr_matrix = corr_matrix[corr_matrix < 1].unstack().transpose() \
-        .sort_values(ascending=False) \
-        .drop_duplicates()
-    count = corr_matrix[corr_matrix.between(0.5, 1) == True].count()
-    return corr_matrix.head(count)
+    cor_target = corr_matrix['SalePrice']
+    best_correlations = cor_target[cor_target.between(0.5, 1) == True]
+    print("Best correlation to SalePrice \n{}".format(best_correlations))
+    return best_correlations.index.tolist()

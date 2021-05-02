@@ -36,7 +36,7 @@ int_target = prep_regression_data(transformed_target)
 # Correlation Matrix
 print_stage("Generating correlation matrix's")
 # generate_correlation_matrix(int_ref).show()
-best = get_best_correlations(int_ref)
+best = get_best_correlations(int_ref.copy())
 print(best)
 
 # Regression & prediction

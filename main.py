@@ -20,14 +20,14 @@ print_stage("Cleaning & transforming dataset_without_sale.csv (test.csv)")
 ref = pd.read_csv('data/dataset_with_sale.csv')
 discover_inconsistencies(ref)
 cleaned_ref = clean(ref)
-transformed_ref = transform(ref)
+transformed_ref = transform(cleaned_ref)
 
 # Data to Predict
 print_stage("Cleaning & transforming dataset_with_sale.csv (train.csv)")
 target = pd.read_csv('data/dataset_without_sale.csv')
 discover_inconsistencies(target)
 cleaned_target = clean(target)
-transformed_target = transform(target)
+transformed_target = transform(cleaned_target)
 
 # Numberizing Data
 int_ref = prep_regression_data(transformed_ref)
@@ -35,8 +35,9 @@ int_target = prep_regression_data(transformed_target)
 
 # Correlation Matrix
 print_stage("Generating correlation matrix's")
-generate_correlation_matrix(int_ref).show()
-get_best_correlations(int_ref)
+# generate_correlation_matrix(int_ref).show()
+best = get_best_correlations(int_ref)
+print(best)
 
 # Regression & prediction
 print_stage("Fitting regression & prediction")

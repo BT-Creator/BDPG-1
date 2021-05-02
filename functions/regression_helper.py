@@ -13,6 +13,7 @@ def split_data(train):
 
 
 def prep_regression_data(df):
+    df['CentralAir'] = df['CentralAir'].astype(int)
     for key in chained_columns.keys():
         if df[key].dtype.name is 'category':
             replace_categorical_na(df, key)

@@ -8,7 +8,7 @@ def generate_correlation_matrix(df):
     :param df: Dataframe
     :return: correlation matrix of DataFrame
     """
-    corr_matrix = df.corr()
+    corr_matrix = df[df.columns.difference(['Id', 'CentralAir'])].corr()
     plt.subplots(figsize=(30, 30))
     sn.heatmap(corr_matrix, annot=True, fmt=".2f", cmap='coolwarm')
     return plt

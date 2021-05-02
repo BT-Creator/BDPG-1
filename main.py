@@ -15,19 +15,19 @@ def print_stage(msg):
     print("#" * (len(msg) + 4))
 
 
-# Target
-print_stage("Cleaning & transforming dataset_with_sale.csv")
+# Reference data / Training Data
+print_stage("Cleaning & transforming dataset_without_sale.csv (test.csv)")
+ref = pd.read_csv('data/dataset_with_sale.csv')
+discover_inconsistencies(ref)
+cleaned_ref = clean(ref)
+transformed_ref = transform(ref)
+
+# Data to Predict
+print_stage("Cleaning & transforming dataset_with_sale.csv (train.csv)")
 target = pd.read_csv('data/dataset_without_sale.csv')
 discover_inconsistencies(target)
-target = clean(target)
-target = transform(target)
-
-# Test
-print_stage("Cleaning & transforming dataset_without_sale.csv")
-test = pd.read_csv('data/dataset_with_sale.csv')
-discover_inconsistencies(test)
-test = clean(test)
-test = transform(test)
+cleaned_target = clean(target)
+transformed_target = transform(target)
 
 # Correlation Matrix
 # print_stage("Generating correlation matrix's")
@@ -39,10 +39,10 @@ test = transform(test)
 # Regression & prediction
 print_stage("Fitting regression & prediction")
 predictions = {
-    'Linear Regression': linear_regression(target.copy(), test.copy()),
-    'ElasticNet Regression': elastinet_regression(test.copy()),
-    'Ridge Regression': ridge_regression(test.copy()),
-    'Lasso regression': lasso_regression(test.copy())
+    'Linear Regression': linear_regression(transformed_ref.copy(), transformed_target.copy()),
+    'ElasticNet Regression': elastinet_regression(target.copy()),
+    'Ridge Regression': ridge_regression(target.copy()),
+    'Lasso regression': lasso_regression(target.copy())
 }
 best_prediction = None
 r2 = 0

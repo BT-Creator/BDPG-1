@@ -1,5 +1,3 @@
-import numpy as np
-
 from config.clean_params import chained_columns
 
 
@@ -21,9 +19,9 @@ def clean(df):
                                                                            "WdShing")
     df.loc[df['MasVnrType'] == "None", 'MasVnrType'] = replace_string(df, "MasVnrType", "None", None)
     df.loc[df['GarageCars'].isnull(), 'GarageCars'] = apply_avg(df, 'GarageCars', None)
-    for column in chained_columns:
-        df.loc[df[column].isnull()] = fix_relationships_inconsistency(df, column)
-    df = apply_most_frequent(df, "MSZoning")
+    # for column in chained_columns:
+    #     df.loc[df[column].isnull()] = fix_relationships_inconsistency(df, column)
+    # df = apply_most_frequent(df, "MSZoning")
     return df
 
 

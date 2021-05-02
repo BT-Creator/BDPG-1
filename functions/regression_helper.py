@@ -1,3 +1,4 @@
+import numpy as np
 from skimage.metrics import mean_squared_error
 from sklearn.metrics import mean_squared_error
 
@@ -46,4 +47,4 @@ def print_results(regression, X_test, y_test, y_pred, regression_name):
     rmse = np.sqrt(mean_squared_error(y_test, y_pred))
     print("Root Mean Squared Error: {}".format(rmse))
     print("===== End {} regression ===== \n".format(regression_name))
-    return r2
+    return rmse

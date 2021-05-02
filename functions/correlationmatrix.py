@@ -1,7 +1,5 @@
 import matplotlib.pyplot as plt
-import pandas as pd
 import seaborn as sn
-import numpy as np
 
 
 def generate_correlation_matrix(df):
@@ -10,8 +8,7 @@ def generate_correlation_matrix(df):
     :param df: Dataframe
     :return: correlation matrix of DataFrame
     """
-    corr_matrix = df.corr()
-    print(corr_matrix)
+    corr_matrix = df[df.columns.difference(['Id', 'CentralAir'])].corr()
     plt.subplots(figsize=(30, 30))
     sn.heatmap(corr_matrix, annot=True, fmt=".2f", cmap='coolwarm')
     return plt
@@ -24,8 +21,7 @@ def get_best_correlations(df):
     :return: best correlating elements
     """
     corr_matrix = df.corr()
-    corr_matrix = corr_matrix[corr_matrix < 1].unstack().transpose() \
-        .sort_values(ascending=False) \
-        .drop_duplicates()
-    count = corr_matrix[corr_matrix.between(0.5, 1) == True].count()
-    return corr_matrix.head(count)
+    cor_target = corr_matrix['SalePrice']
+    best_correlations = cor_target[cor_target.between(0.5, 1) == True]
+    print("Best correlation to SalePrice \n{}".format(best_correlations))
+    return best_correlations.index.tolist()

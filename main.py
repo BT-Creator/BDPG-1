@@ -58,9 +58,9 @@ predictions = {
 }
 
 best_prediction = None
-r2 = 0
+r2 = 1
 for key, value in predictions.items():
-    if value > r2:
+    if value < r2:
         best_prediction = key
         r2 = value
 print("The regression method {} has the best prediction with a R^2 of {}".format(

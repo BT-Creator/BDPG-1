@@ -1,5 +1,4 @@
 from sklearn.linear_model import ElasticNet
-from sklearn.model_selection import train_test_split
 
 from config.regression_params import reg_params
 from functions.regression_helper import prep_regression_data, split_data, print_results

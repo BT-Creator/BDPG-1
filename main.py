@@ -29,12 +29,14 @@ discover_inconsistencies(target)
 cleaned_target = clean(target)
 transformed_target = transform(target)
 
+# Numberizing Data
+int_ref = prep_regression_data(transformed_ref)
+int_target = prep_regression_data(transformed_target)
+
 # Correlation Matrix
-# print_stage("Generating correlation matrix's")
-# generate_correlation_matrix(train).show()
-# get_best_correlations(train)
-# generate_correlation_matrix(train).show()
-# get_best_correlations(train)
+print_stage("Generating correlation matrix's")
+generate_correlation_matrix(int_ref).show()
+get_best_correlations(int_ref)
 
 # Regression & prediction
 print_stage("Fitting regression & prediction")

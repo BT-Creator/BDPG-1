@@ -39,3 +39,9 @@ The model predicts the house prices with 3" different type of regression, these 
 
 **Q:** Some code in the transform function is in comment.<br>
 **A:** This was, because originally, there was decided to transform data within the dataset to the right dataset. But when transforming date data in the dataset, it doesn't play nicely with regression calculation. Because of this, we've decided to not do that.
+
+# FAQ
+**Q:** Where are `test.csv` and `train.csv`? <br>
+**A:** We personally found that these naming was very confusing, so we've decided to rename the datasets:
+- `train.csv` -> `dataset_with_sale.csv`
+- `test.csv` -> `dataset_without_sale.csv`

@@ -6,7 +6,6 @@
 - `chained_columns` is a dictionary that defines main columns that influences other columns. If the main columns has a empty value, this will also apply to other columns.
 - `non_strict_columns` defined where NaN values are allowed in numerical columns. By default, numerical columns should not have NaN values.
 """
-import math
 
 categorical_values = {
     'MSSubClass': [20, 30, 40, 45, 50, 60, 70,

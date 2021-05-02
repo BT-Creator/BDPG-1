@@ -4,6 +4,7 @@
 
 reg_params = {
     'target_column': 'SalePrice',
-    'test_size': 0.4,
+    'test_size': 0.4995,
     'random_state': 42,
+    'shuffle': False
 }

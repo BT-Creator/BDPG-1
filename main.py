@@ -1,5 +1,5 @@
 from functions.clean import *
-from functions.correlationmatrix import *
+from functions.correlation_matrix import *
 from functions.discover import *
 from functions.regression.elastinet import elastinet_regression
 from functions.regression.lasso import lasso_regression
@@ -33,8 +33,8 @@ target = transform(target)
 
 # Numberizing Data
 # Adding Number data
-int_ref = prep_regression_data(ref)
-int_target = prep_regression_data(target)
+int_ref = prep_regression_data(ref.copy())
+int_target = prep_regression_data(target.copy())
 # Checking if all dummies are included in dataset and filling in missing dummies
 int_ref_length = len(int_ref.columns)
 int_target_length = len(int_target.columns)
@@ -46,29 +46,35 @@ int_ref = add_missing_possibilities(int_ref, missing_columns_ref)
 
 # Correlation Matrix
 print_stage("Generating correlation matrix's")
-# generate_correlation_matrix(int_ref).show()
-best_pearson = get_best_correlations(int_ref.copy(), 'pearson')
-best_kendall = get_best_correlations(int_ref.copy(), 'kendall')
-best_spearman = get_best_correlations(int_ref.copy(), 'spearman')
+corr_df = prep_correlation_data(ref)
+corr_pearson = get_best_correlations(corr_df.copy(), 'pearson')
+corr_kendall = get_best_correlations(corr_df.copy(), 'kendall')
+corr_spearman = get_best_correlations(corr_df.copy(), 'spearman')
+generate_correlation_matrix(corr_df, corr_pearson, "Pearson Correlation matrix").show()
+generate_correlation_matrix(corr_df, corr_kendall, "Kendall Correlation matrix").show()
+generate_correlation_matrix(corr_df, corr_spearman, "Spearman Correlation matrix").show()
 
 # Regression & prediction
 print_stage("Fitting regression & prediction")
 
 # Prep ref data
-best_pearson.append('Id')
-best_kendall.append('Id')
-best_spearman.append('Id')
-model_ref_pearson = int_ref[best_pearson]
-model_ref_kendall = int_ref[best_kendall]
-model_ref_spearman = int_ref[best_spearman]
+corr_pearson = get_best_correlations(int_ref.copy(), 'pearson')
+corr_kendall = get_best_correlations(int_ref.copy(), 'kendall')
+corr_spearman = get_best_correlations(int_ref.copy(), 'spearman')
+corr_pearson.append('Id')
+corr_kendall.append('Id')
+corr_spearman.append('Id')
+model_ref_pearson = int_ref[corr_pearson]
+model_ref_kendall = int_ref[corr_kendall]
+model_ref_spearman = int_ref[corr_spearman]
 
 # Prep target data
-best_pearson.remove('SalePrice')
-best_kendall.remove('SalePrice')
-best_spearman.remove('SalePrice')
-model_target_pearson = int_target[best_pearson]
-model_target_kendall = int_target[best_kendall]
-model_target_spearman = int_target[best_spearman]
+corr_pearson.remove('SalePrice')
+corr_kendall.remove('SalePrice')
+corr_spearman.remove('SalePrice')
+model_target_pearson = int_target[corr_pearson]
+model_target_kendall = int_target[corr_kendall]
+model_target_spearman = int_target[corr_spearman]
 
 # Make predictions
 predictions_linear = {

@@ -4,7 +4,8 @@ from functions.discover import *
 from functions.regression.elastinet import elastinet_regression
 from functions.regression.lasso import lasso_regression
 from functions.regression.linear import linear_regression
-from functions.regression.regression_helper import prep_regression_data, add_missing_possibilities
+from functions.regression.regression_helper import prep_regression_data, add_missing_possibilities, \
+    post_best_predictions
 from functions.regression.ridge import ridge_regression
 from functions.transform import transform
 
@@ -45,13 +46,10 @@ int_ref = add_missing_possibilities(int_ref, missing_columns_ref)
 
 # Correlation Matrix
 print_stage("Generating correlation matrix's")
-generate_correlation_matrix(int_ref).show()
+# generate_correlation_matrix(int_ref).show()
 best_pearson = get_best_correlations(int_ref.copy(), 'pearson')
 best_kendall = get_best_correlations(int_ref.copy(), 'kendall')
 best_spearman = get_best_correlations(int_ref.copy(), 'spearman')
-print(best_pearson)
-print(best_kendall)
-print(best_spearman)
 
 # Regression & prediction
 print_stage("Fitting regression & prediction")
@@ -73,81 +71,43 @@ model_target_kendall = int_target[best_kendall]
 model_target_spearman = int_target[best_spearman]
 
 # Make predictions
-predictions = {
+predictions_linear = {
     'Linear Regression | Non-Optimized': linear_regression(
         int_ref.copy(),
         int_target.copy(),
         'export/linear/linear_regression.csv'
-    ),
-    'Lasso Regression | Non-Optimized': lasso_regression(
-        int_ref.copy(),
-        int_target.copy(),
-        'export/lasso/lasso_regression.csv'
-    ),
-    'ElasticNet Regression | Non-Optimized': elastinet_regression(
-        int_ref.copy(),
-        int_target.copy(),
-        'export/elasticNet/elasticnet_regression.csv'
-    ),
-    'Ridge Regression | Non-Optimized': ridge_regression(
-        int_ref.copy(),
-        int_target.copy(),
-        'export/ridge/ridge_regression.csv'
     ),
     'Linear Regression | Optimized - Pearson': linear_regression(
         model_ref_pearson.copy(),
         model_target_pearson.copy(),
         'export/linear/linear_regression_optimized_pearson.csv'
     ),
-    'Lasso Regression | Optimized - Pearson': lasso_regression(
-        model_ref_pearson.copy(),
-        model_target_pearson.copy(),
-        'export/lasso/lasso_regression_optimized_pearson.csv'
-    ),
-    'ElasticNet Regression | Optimized - Pearson': elastinet_regression(
-        model_ref_pearson.copy(),
-        model_target_pearson.copy(),
-        'export/elasticNet/elasticnet_regression_optimized_pearson.csv'
-    ),
-    'Ridge Regression | Optimized - Pearson': ridge_regression(
-        model_ref_pearson.copy(),
-        model_target_pearson.copy(),
-        'export/ridge/ridge_regression_optimized_pearson.csv'
-    ),
     'Linear Regression | Optimized - Kendall': linear_regression(
         model_ref_kendall.copy(),
         model_target_kendall.copy(),
         'export/linear/linear_regression_optimized_kendall.csv'
-    ),
-    'Lasso Regression | Optimized - Kendall': lasso_regression(
-        model_ref_kendall.copy(),
-        model_target_kendall.copy(),
-        'export/lasso/lasso_regression_optimized_kendall.csv'
-    ),
-    'ElasticNet Regression | Optimized - Kendall': elastinet_regression(
-        model_ref_kendall.copy(),
-        model_target_kendall.copy(),
-        'export/elasticNet/elasticnet_regression_optimized_kendall.csv'
-    ),
-    'Ridge Regression | Optimized - Kendall': ridge_regression(
-        model_ref_kendall.copy(),
-        model_target_kendall.copy(),
-        'export/ridge/ridge_regression_optimized_kendall.csv'
     ),
     'Linear Regression | Optimized - Spearman': linear_regression(
         model_ref_spearman.copy(),
         model_target_spearman.copy(),
         'export/linear/linear_regression_optimized_spearman.csv'
     ),
-    'Lasso Regression | Optimized - Spearman': lasso_regression(
-        model_ref_spearman.copy(),
-        model_target_spearman.copy(),
-        'export/lasso/lasso_regression_optimized_spearman.csv'
+}
+predictions_ridge = {
+    'Ridge Regression | Non-Optimized': ridge_regression(
+        int_ref.copy(),
+        int_target.copy(),
+        'export/ridge/ridge_regression.csv'
     ),
-    'ElasticNet Regression | Optimized - Spearman': elastinet_regression(
+    'Ridge Regression | Optimized - Pearson': ridge_regression(
+        model_ref_pearson.copy(),
+        model_target_pearson.copy(),
+        'export/ridge/ridge_regression_optimized_pearson.csv'
+    ),
+    'Ridge Regression | Optimized - Kendall': ridge_regression(
         model_ref_kendall.copy(),
         model_target_kendall.copy(),
-        'export/elasticNet/elasticnet_regression_optimized_spearman.csv'
+        'export/ridge/ridge_regression_optimized_kendall.csv'
     ),
     'Ridge Regression | Optimized - Spearman': ridge_regression(
         model_ref_kendall.copy(),
@@ -155,14 +115,52 @@ predictions = {
         'export/ridge/ridge_regression_optimized_spearman.csv'
     )
 }
+predictions_elasticnet = {
+    'ElasticNet Regression | Non-Optimized': elastinet_regression(
+        int_ref.copy(),
+        int_target.copy(),
+        'export/elasticNet/elasticnet_regression.csv'
+    ),
+    'ElasticNet Regression | Optimized - Pearson': elastinet_regression(
+        model_ref_pearson.copy(),
+        model_target_pearson.copy(),
+        'export/elasticNet/elasticnet_regression_optimized_pearson.csv'
+    ),
+    'ElasticNet Regression | Optimized - Kendall': elastinet_regression(
+        model_ref_kendall.copy(),
+        model_target_kendall.copy(),
+        'export/elasticNet/elasticnet_regression_optimized_kendall.csv'
+    ),
+    'ElasticNet Regression | Optimized - Spearman': elastinet_regression(
+        model_ref_kendall.copy(),
+        model_target_kendall.copy(),
+        'export/elasticNet/elasticnet_regression_optimized_spearman.csv'
+    )
+}
+predictions_lasso = {
+    'Lasso Regression | Non-Optimized': lasso_regression(
+        int_ref.copy(),
+        int_target.copy(),
+        'export/lasso/lasso_regression.csv'
+    ),
+    'Lasso Regression | Optimized - Pearson': lasso_regression(
+        model_ref_pearson.copy(),
+        model_target_pearson.copy(),
+        'export/lasso/lasso_regression_optimized_pearson.csv'
+    ),
+    'Lasso Regression | Optimized - Kendall': lasso_regression(
+        model_ref_kendall.copy(),
+        model_target_kendall.copy(),
+        'export/lasso/lasso_regression_optimized_kendall.csv'
+    ),
+    'Lasso Regression | Optimized - Spearman': lasso_regression(
+        model_ref_spearman.copy(),
+        model_target_spearman.copy(),
+        'export/lasso/lasso_regression_optimized_spearman.csv'
+    )
+}
 
-best_prediction = 'Linear Regression | Optimized - Pearson'
-rsme = predictions.get('Linear Regression | Optimized - Pearson')
-for key, value in predictions.items():
-    if value < rsme:
-        best_prediction = key
-        rsme = value
-print("The regression method {} has the best prediction with a RMSE of {}".format(
-    best_prediction,
-    predictions.get(best_prediction)
-))
+post_best_predictions(predictions_linear)
+post_best_predictions(predictions_lasso)
+post_best_predictions(predictions_elasticnet)
+post_best_predictions(predictions_ridge)

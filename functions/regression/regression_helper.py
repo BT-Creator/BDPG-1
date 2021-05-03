@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 from skimage.metrics import mean_squared_error
 from sklearn.metrics import mean_squared_error
 
@@ -14,21 +13,30 @@ def split_data(train):
 
 
 def prep_regression_data(df):
+    normalized_columns = df.select_dtypes(include=['number']).columns.tolist()
+    normalized_columns.remove('Id')
+    if 'SalePrice' in normalized_columns:
+        normalized_columns.remove('SalePrice')
+    df[normalized_columns] = normalize(df[normalized_columns])
+    df['CentralAir'] = df['CentralAir'].replace({True: 1, False: 0})
     for array in chained_columns.values():
         for column in array:
             if df[column].dtype.name is not 'category':
                 df[column].fillna(-1, inplace=True)
-    df['CentralAir'] = df['CentralAir'].astype(int)
-    df = pd.get_dummies(df, dummy_na=True)
+    df = pd.get_dummies(df)
     return df
 
 
-def replace_categorical_na(df, key):
-    if df[key].isnull().values.any():
-        df[key] = df[key].cat.add_categories(-1).fillna(-1)
-        df[key] = df[key].cat.remove_categories(None)
-    df[key] = df[key].cat.reorder_categories(df[key].unique(), ordered=True)
-    df[key] = df[key].cat.codes
+def add_missing_possibilities(df, columns):
+    for column in columns:
+        df[column] = 0
+        df[column].astype('uint8')
+    return df
+
+
+def normalize(df):
+    norm_df = ((df - df.min()) / (df.max() - df.min()))
+    return norm_df
 
 
 def print_results(regression, X_test, y_test, y_pred, regression_name):
@@ -41,8 +49,14 @@ def print_results(regression, X_test, y_test, y_pred, regression_name):
     return rmse
 
 
-def add_missing_possibilities(df, columns):
-    for column in columns:
-        df[column] = 0
-        df[column].astype('uint8')
-    return df
+def post_best_predictions(predictions):
+    best_prediction = list(predictions.items())[0][0]
+    rsme = list(predictions.items())[0][1]
+    for key, value in predictions.items():
+        if value < rsme:
+            best_prediction = key
+            rsme = value
+    print("The regression method {} has the best prediction with a RMSE of {}".format(
+        best_prediction,
+        predictions.get(best_prediction)
+    ))

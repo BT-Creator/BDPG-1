@@ -50,7 +50,7 @@ The model predicts the house prices with 4 different type of regression, these b
 - Lasso regression
 - Ridge regression
 
-At the current time of writing is **Linear Regression with Pearson Optimization** the most optimal model, with a 0,20601
+At the current time of writing is **Lasso Regression with Pearson Optimization** the most optimal model, with a 0,20600
 score on [kaggle](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/leaderboard) *(Lower is better)*.
 
 # FAQ

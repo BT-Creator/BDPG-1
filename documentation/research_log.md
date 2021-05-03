@@ -42,3 +42,18 @@
 ## Lennert
 - made function for generating the correlation matrix for a given dataframe
 - made a function to get the best correlating elements of a correlation matrix of a dataset
+
+# 28-04-21
+## Bo
+- cleaned the data further
+- started the ridge regression
+
+## Benjamin
+- made the lasso regression function
+
+## Steffen
+- made the elasticnet regression funcion
+
+## Lennert
+- finished the ridge regression function
+

@@ -1,9 +1,9 @@
 import numpy as np
+import pandas as pd
 from skimage.metrics import mean_squared_error
 from sklearn.metrics import mean_squared_error
 
 from config.regression_params import reg_params
-from functions.clean import *
 from functions.discover import *
 
 
@@ -14,21 +14,12 @@ def split_data(train):
 
 
 def prep_regression_data(df):
-    df['CentralAir'] = df['CentralAir'].astype(int)
-    for key in chained_columns.keys():
-        if df[key].dtype.name is 'category':
-            replace_categorical_na(df, key)
-        for column in chained_columns.get(key):
-            if df[column].dtype.name is 'category' and df[column].isnull().values.any():
-                df[column] = df[column].cat.add_categories(-1).fillna(-1)
-                df[column] = df[column].cat.remove_categories(None)
-                df[column] = df[column].cat.reorder_categories(df[column].unique(), ordered=True)
-                df[column] = df[column].cat.codes
-            else:
+    for array in chained_columns.values():
+        for column in array:
+            if df[column].dtype.name is not 'category':
                 df[column].fillna(-1, inplace=True)
-    for key in categorical_values.keys():
-        if df[key].dtype.name is 'category':
-            replace_categorical_na(df, key)
+    df['CentralAir'] = df['CentralAir'].astype(int)
+    df = pd.get_dummies(df, dummy_na=True)
     return df
 
 
@@ -48,3 +39,10 @@ def print_results(regression, X_test, y_test, y_pred, regression_name):
     print("Root Mean Squared Error: {}".format(rmse))
     print("===== End {} regression ===== \n".format(regression_name))
     return rmse
+
+
+def add_missing_possibilities(df, columns):
+    for column in columns:
+        df[column] = 0
+        df[column].astype('uint8')
+    return df

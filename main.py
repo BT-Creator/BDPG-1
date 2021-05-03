@@ -4,7 +4,7 @@ from functions.discover import *
 from functions.regression.elastinet import elastinet_regression
 from functions.regression.lasso import lasso_regression
 from functions.regression.linear import linear_regression
-from functions.regression.regression_helper import prep_regression_data
+from functions.regression.regression_helper import prep_regression_data, add_missing_possibilities
 from functions.regression.ridge import ridge_regression
 from functions.transform import transform
 
@@ -31,12 +31,21 @@ target = clean(target)
 target = transform(target)
 
 # Numberizing Data
+# Adding Number data
 int_ref = prep_regression_data(ref)
 int_target = prep_regression_data(target)
+# Checking if all dummies are included in dataset and filling in missing dummies
+int_ref_length = len(int_ref.columns)
+int_target_length = len(int_target.columns)
+missing_columns_target = int_ref[int_ref.columns.difference(int_target.columns.tolist())].columns.tolist()
+missing_columns_target.remove('SalePrice')
+int_target = add_missing_possibilities(int_target, missing_columns_target)
+missing_columns_ref = int_target[int_target.columns.difference(int_ref.columns.tolist())].columns.tolist()
+int_ref = add_missing_possibilities(int_ref, missing_columns_ref)
 
 # Correlation Matrix
 print_stage("Generating correlation matrix's")
-# generate_correlation_matrix(int_ref).show()
+generate_correlation_matrix(int_ref).show()
 best_pearson = get_best_correlations(int_ref.copy(), 'pearson')
 best_kendall = get_best_correlations(int_ref.copy(), 'kendall')
 best_spearman = get_best_correlations(int_ref.copy(), 'spearman')
@@ -66,23 +75,23 @@ model_target_spearman = int_target[best_spearman]
 # Make predictions
 predictions = {
     'Linear Regression | Non-Optimized': linear_regression(
-        ref.copy(),
-        target.copy(),
+        int_ref.copy(),
+        int_target.copy(),
         'export/linear/linear_regression.csv'
     ),
     'Lasso Regression | Non-Optimized': lasso_regression(
-        ref.copy(),
-        target.copy(),
+        int_ref.copy(),
+        int_target.copy(),
         'export/lasso/lasso_regression.csv'
     ),
     'ElasticNet Regression | Non-Optimized': elastinet_regression(
-        ref.copy(),
-        target.copy(),
+        int_ref.copy(),
+        int_target.copy(),
         'export/elasticNet/elasticnet_regression.csv'
     ),
     'Ridge Regression | Non-Optimized': ridge_regression(
-        ref.copy(),
-        target.copy(),
+        int_ref.copy(),
+        int_target.copy(),
         'export/ridge/ridge_regression.csv'
     ),
     'Linear Regression | Optimized - Pearson': linear_regression(
@@ -147,8 +156,8 @@ predictions = {
     )
 }
 
-best_prediction = None
-rsme = predictions.get('Linear Regression | Non-Optimized')
+best_prediction = 'Linear Regression | Optimized - Pearson'
+rsme = predictions.get('Linear Regression | Optimized - Pearson')
 for key, value in predictions.items():
     if value < rsme:
         best_prediction = key

@@ -823,7 +823,7 @@
 </table>
 </details>
 <details>
-<summary>MasVnrTyp</summary>
+<summary>MasVnrType</summary>
 <p>Masonry veneer type</p>
 <table>
 <thead>
@@ -837,10 +837,10 @@
     <td>BrkCmn</td><td>Brick Common</td>
   </tr>
   <tr>
-    <td>BrkFace</td><td>Brick Face/td>
+    <td>BrkFace</td><td>Brick Face</td>
   </tr>
   <tr>
-    <td>CBlock/td><td>Cinder Block</td>
+    <td>CBlock</td><td>Cinder Block</td>
   </tr>
   <tr>
     <td>None</td><td>None</td>

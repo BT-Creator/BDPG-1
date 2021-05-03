@@ -1,7 +1,7 @@
 from sklearn.linear_model import ElasticNet
 
 from config.regression_params import reg_params
-from functions.regression_helper import split_data, print_results
+from functions.regression.regression_helper import split_data, print_results
 
 
 def elastinet_regression(ref, target, out_name):

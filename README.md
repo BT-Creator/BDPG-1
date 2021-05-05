@@ -13,7 +13,21 @@ Welcome to the BDPG-1 project! This project is a group project by
 
 This project uses the Ames Housing Set in order to predict sell prices of houses.
 
-# Dashboards
+# Quick Start Guide
+1. Git clone the project
+2. At the root file, make a directory with the following structure:
+  ```
+  .
+  └── export
+      ├── elasticNet
+      ├── lasso
+      ├── linear
+      └── ridge
+  ```
+3. Run the `main.py` script. It will generate all the possible combinations of models we've researched. 
+   If you want to disable some aspect of the project, you can comment out the prediction in the prediction dictionaries.
+
+# Data Visualization
 
 In order to visualize data, we've used **Tableau**. The Tableau data can be found in the `tableau` directory.
 
